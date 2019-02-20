@@ -1,0 +1,73 @@
+﻿@model GeneralInformation
+@{
+
+}
+
+<div class="container">
+    <script>
+        function toggleIsRegistered() {
+            @Model.IsRegistered = document.getElementById("isRegistered").checked;
+        }
+    </script>
+    <div class="paragraph-section" id="generalInformation">
+        <div class="row">
+            <div class="col-sm-3">
+                Name
+            </div>
+            <div class="col-sm-6">
+                <input value="@Model.ClubName" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                Der Verein soll eingetragen werden
+            </div>
+            <div class="col-sm-1">
+                <input type="radio" name="isRegistered" id="isRegistered"
+                       onclick="toggleIsRegistered()"
+                       checked />
+            </div>
+            <div class="col-sm-2">Ja</div>
+            <div class="col-sm-1">
+                <input type="radio" onclick="toggleIsRegistered()" name="isRegistered" id="isNotRegistered" />
+            </div>
+            <div class="col-sm-2">Nein</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                Sitz des Vereins
+            </div>
+            <div class="col-sm-3">
+                <input placeholder="Ort" value="@Model.City" />
+            </div>
+            <div class="col-sm-3">
+                <input placeholder="Postleitzahl" value="@Model.PostCode" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">Anzahl Gründungmitglieder</div>
+            <div class="col-sm-6">
+                <select value="@Model.FounderCount">
+                    @for (var i = 7; i < 10; i++)
+                    {
+                        <option value="@i">@i</option>}
+                    <option value="10">10 oder mehr</option>
+                </select>
+            </div>
+        </div>
+        @for (var i = 1; i < @Model.FounderCount; i++)
+        {
+            <div class="row">
+                <div class="col-sm-3">Gründungsmitglied @i:</div>
+                <div class="col-sm-6"><input /></div>
+            </div>
+        }
+        <div class="row">
+            <div class="col-sm-3">Einrichtung der Satzung</div>
+            <div class="col-sm-6">
+                <input type="date" />
+            </div>
+        </div>
+    </div>
+
+</div>

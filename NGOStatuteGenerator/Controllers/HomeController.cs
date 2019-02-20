@@ -12,7 +12,7 @@ namespace NGOStatuteGenerator.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View(new Statute());
         }
 
         public IActionResult About()
@@ -34,10 +34,6 @@ namespace NGOStatuteGenerator.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+     
     }
 }

@@ -1,0 +1,27 @@
+﻿@model MembershipInformation
+@{
+}
+
+<div class="container">
+    <div class="paragraph-section" id="membership">
+        <div class="row">
+            <div class="col-sm-3">
+                Wer kann Mitglied werden?
+            </div>
+            <div class="col-sm-6">
+
+                @foreach (string executiveType in Program.PersonTypes)
+                {
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <input type="checkbox" value="@executiveType" />
+                        </div>
+                        <div class="col-sm-10">
+                            @executiveType
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
