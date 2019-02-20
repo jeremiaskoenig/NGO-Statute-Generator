@@ -5,7 +5,7 @@
       "text": "(1) Der Verein führt den Namen $Vereinsnamen$"
     },
     {
-      "text": "(2) Der Verein hat seinen Sitz in $Vereinssitz$ und ist in das Vereinsregister einzutragen. Nach der Eintragung führt er den Zusatz /„e. V./“."
+      "text": "(2) Der Verein hat seinen Sitz in $Vereinssitz$ und ist in das Vereinsregister einzutrage.; nach der Eintragung führt er den Zusatz /„e. V./“."
     }
   ]
 }

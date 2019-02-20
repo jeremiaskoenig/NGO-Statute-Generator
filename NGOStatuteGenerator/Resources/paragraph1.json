@@ -1,8 +1,8 @@
 {
-  "title": "Satzung des [Vereinsname]",
+  "title": "Satzung des $Vereinsname$",
   "clauses": [
     {
       "text": ""
-    },
+    }
   ]
 }
