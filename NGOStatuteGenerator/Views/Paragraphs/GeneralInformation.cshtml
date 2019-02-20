@@ -8,13 +8,25 @@
         function toggleIsRegistered() {
             @Model.IsRegistered = document.getElementById("isRegistered").checked;
         }
+        function toggleFounderRows() {
+            var founderCount = parseInt(document.getElementById("founderCount").value);
+            for (var i = 1; i <= 10; i++) {
+                var row = document.getElementById("founderRow_" + i.toString());
+                if (row && i > founderCount) {
+                    row.disabled = true;
+                    row.hidden = true;
+                } else if (row && i <= founderCount) {
+                    row.hidden = false;
+                }                         
+            }
+        }
     </script>
     <div class="paragraph-section" id="generalInformation">
         <div class="row">
             <div class="col-sm-3">
-                Name des Vereins
+                <b>Name des Vereins</b>
             </div>
-            <div class="col-md-4 col-sm-6">
+            <div class="col-sm-6">
                 <input value="@Model.ClubName" />
             </div>
         </div>
@@ -22,10 +34,10 @@
             <div class="col-sm-3">
                 Der Verein soll eingetragen werden
             </div>
-            <div class="col-sm-3 col-md-2">
+            <div class="col-sm-3">
                 <button>Ja</button>
             </div>
-            <div class="col-sm-3 col-md-2">
+            <div class="col-sm-3">
                 <button>Nein</button>
             </div>
         </div>
@@ -33,19 +45,28 @@
             <div class="col-sm-3">
                 Sitz des Vereins
             </div>
-            <div class="col-md-4 col-sm-6">
+            <div class="col-sm-6">
                 <input placeholder="Ort" value="@Model.City" />
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-offset-3 col-md-4 col-sm-6">
+            <div class="col-sm-offset-3 col-sm-6">
                 <input placeholder="Postleitzahl" value="@Model.PostCode" />
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-3">Anzahl Gründungmitglieder</div>
+            <div class="col-sm-3">Einrichtung der Satzung</div>
             <div class="col-sm-6">
-                <select id="founderCount" value="@Model.FounderCount" onchange="hideFounderRows()">
+                <input type="date" />
+            </div>
+        </div>
+        <div class="row" style="margin-top: 40px;">
+            <div class="col-sm-9"><b>Gründungsmitglieder</b></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">Anzahl</div>
+            <div class="col-sm-6">
+                <select id="founderCount" value="@Model.FounderCount" onchange="toggleFounderRows()">
                     @for (var i = 7; i < 10; i++)
                     {
                         <option value="@i">@i</option>}
@@ -56,19 +77,21 @@
         <div>
 
         </div>
-        @for (var i = 1; i <= 10; i++)
+        @for (var i = 1; i <= 7; i++)
         {
-            <div class="row" id="founderRow@i">
+            <div class="row" id="founderRow_@i">
                 <div class="col-sm-3">Gründungsmitglied @i:</div>
                 <div class="col-sm-6"><input /></div>
             </div>
         }
-        <div class="row">
-            <div class="col-sm-3">Einrichtung der Satzung</div>
-            <div class="col-sm-6">
-                <input type="date" />
+        @for (var i = 8; i <= 10; i++)
+        {
+            <div class="row" id="founderRow_@i" hidden>
+                <div class="col-sm-3">Gründungsmitglied @i:</div>
+                <div class="col-sm-6"><input /></div>
             </div>
-        </div>
+        }
+
     </div>
 
 </div>

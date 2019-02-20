@@ -31,7 +31,7 @@
     </div>
     <div class="row">
         <div class="col-lg-3">
-            Der Vorstand besteht aus
+            Aufgaben des Vorstands
         </div>
         <div class="col-sm-6">
             @foreach (string executiveType in Program.Executives)
@@ -47,6 +47,8 @@
             }
         </div>
     </div>
+
+
     <div class="row">
         <div class="col-lg-3">
         </div>
@@ -56,8 +58,94 @@
     </div>
 
     <div class="row">
-        <div class="col-lg-10">
-            <h5>Beirat</h5>
+        <div class="col-lg-3">
+            Der Vorstand besteht aus
+        </div>
+        <div class="col-sm-9">
+            @foreach (string executiveTask in Program.ExecutiveTasks)
+            {
+                <div class="row">
+                    <div class="col-sm-1">
+                        <input type="checkbox" value="@executiveTask" />
+                    </div>
+                    <div class="col-sm-10">
+                        @executiveTask
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <h4>Sitzung</h4>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-3">
+            Einladung per
+        </div>
+        <div class="col-lg-2">
+            <button>Schriftlich</button>
+        </div>
+        <div class="col-lg-2">
+            <button>E-Mail</button>
+        </div>
+        <div class="col-lg-2">
+            <button>Fax</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            Häufigkeit
+        </div>
+        <div class="col-lg-2">
+            <button>Vierteljährlich</button>
+        </div>
+        <div class="col-lg-2">
+            <button>Halbjährlich</button>
+        </div>
+        <div class="col-lg-2">
+            <button>Jährlich</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            Tagesordnung:
+        </div>
+        <div class="col-lg-2">
+            <button>Notwendig</button>
+        </div>
+        <div class="col-lg-2">
+            <button>Nicht notwendig</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            Frist (Wochen):
+        </div>
+        <div class="col-lg-2">
+            <input type="number" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-1">
+            <input type="checkbox" />
+        </div>
+        <div class="col-sm-9">
+            Sollen die Beschlüsse auch schriftlich außerhalb von Vorstandssitzungen gefasst werden können?
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-2">
+            <h4>Beirat einrichten</h4>
+        </div>
+        <div class="col-lg-1">
+            <input type="checkbox" style="height: 30px;" />
         </div>
     </div>
     <div class="row">
@@ -87,6 +175,15 @@
             Soll der Vorstand verpflichtet werden, in allen wichtigen Angelegenheiten die Meinung des Beirats einzuholen?
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-1">
+            <input type="checkbox" />
+        </div>
+        <div class="col-lg-8">
+            Soll dem Beirat die Möglichkeit eingeräumt werden, die Einberufung einer Beiratssitzung selbst schriftlich zu verlangen?
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-sm-3">
             Einladung per

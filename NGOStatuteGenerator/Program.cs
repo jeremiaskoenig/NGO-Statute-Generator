@@ -15,6 +15,8 @@ namespace NGOStatuteGenerator
     {
         public static IEnumerable<string> ContactTypes { get; private set; }
         public static IEnumerable<string> Executives { get; private set; }
+
+        public static IEnumerable<string> ExecutiveTasks { get; private set; }
         public static IEnumerable<string> MembershipPeriod { get; private set; }
         public static IEnumerable<string> PersonTypes { get; private set; }
         public static IEnumerable<string> PurposeTypes { get; private set; }
@@ -26,6 +28,7 @@ namespace NGOStatuteGenerator
             TextGeneration.Data.Paragraph para1 = ReadJson<TextGeneration.Data.Paragraph>("resources/paragraph1.json");
             ContactTypes = ReadJson<string[]>("resources/contactTypes.json");
             Executives = ReadJson<string[]>("resources/executives.json");
+            ExecutiveTasks = ReadJson<string[]>("resources/executiveTasks.json");
             MembershipPeriod = ReadJson<string[]>("resources/membershipPeriod.json");
             PersonTypes = ReadJson<string[]>("resources/personTypes.json");
             PurposeTypes = ReadJson<string[]>("resources/purposeTypes.json");
