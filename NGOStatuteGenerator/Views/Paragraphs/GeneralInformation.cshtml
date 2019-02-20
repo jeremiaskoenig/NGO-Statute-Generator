@@ -12,9 +12,9 @@
     <div class="paragraph-section" id="generalInformation">
         <div class="row">
             <div class="col-sm-3">
-                Name
+                Name des Vereins
             </div>
-            <div class="col-sm-6">
+            <div class="col-md-4 col-sm-6">
                 <input value="@Model.ClubName" />
             </div>
         </div>
@@ -22,25 +22,23 @@
             <div class="col-sm-3">
                 Der Verein soll eingetragen werden
             </div>
-            <div class="col-sm-1">
-                <input type="radio" name="isRegistered" id="isRegistered"
-                       onclick="toggleIsRegistered()"
-                       checked />
+            <div class="col-sm-3 col-md-2">
+                <button>Ja</button>
             </div>
-            <div class="col-sm-2">Ja</div>
-            <div class="col-sm-1">
-                <input type="radio" onclick="toggleIsRegistered()" name="isRegistered" id="isNotRegistered" />
+            <div class="col-sm-3 col-md-2">
+                <button>Nein</button>
             </div>
-            <div class="col-sm-2">Nein</div>
         </div>
         <div class="row">
             <div class="col-sm-3">
                 Sitz des Vereins
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-4 col-sm-6">
                 <input placeholder="Ort" value="@Model.City" />
             </div>
-            <div class="col-sm-3">
+        </div>
+        <div class="row">
+            <div class="col-sm-offset-3 col-md-4 col-sm-6">
                 <input placeholder="Postleitzahl" value="@Model.PostCode" />
             </div>
         </div>
@@ -55,7 +53,10 @@
                 </select>
             </div>
         </div>
-        @for (var i = 1; i < @Model.FounderCount; i++)
+        <div>
+
+        </div>
+        @for (var i = 1; i < 10; i++)
         {
             <div class="row">
                 <div class="col-sm-3">Gründungsmitglied @i:</div>
