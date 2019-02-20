@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using NGOStatuteGenerator.TextGeneration;
 using System.Collections.Generic;
 
 namespace NGOStatuteGenerator.Models
 {
-    public class GeneralInformation : PageModel
+    public class GeneralInformation : PageModel, IPlaceholderSupplier
     {
         public string ClubName { get; set; }
         public bool IsRegistered { get; set; }
@@ -14,6 +15,19 @@ namespace NGOStatuteGenerator.Models
         public GeneralInformation()
         {
             FounderNames = new List<string>();
+        }
+
+        public string GetPlaceholderValue(string placeholder)
+        {
+            switch (placeholder)
+            {
+                case "$ClubName$": return ClubName;
+                case "$IsRegistered$": return IsRegistered ? "true" : "false";
+                case "$PostCode$": return PostCode.ToString();
+                case "$City$": return City;
+
+                default: return placeholder;
+            }
         }
     }
 }
