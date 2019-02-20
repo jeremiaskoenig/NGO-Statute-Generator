@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Collections.Generic;
 
 namespace NGOStatuteGenerator.Models
 {
-    public class GeneralInformation
+    public class GeneralInformation : PageModel
     {
         public string ClubName { get; set; }
         public bool IsRegistered { get; set; }

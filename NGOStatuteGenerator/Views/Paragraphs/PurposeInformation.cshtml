@@ -1,0 +1,29 @@
+﻿@model PurposeInformation
+@{
+   
+}
+
+<div class="container">
+    <div class="paragraph-section" id="purpose">
+        <div class="row">
+            <div class="col-sm-3">
+                Zweck
+            </div>
+            <div class="col-sm-6">
+                <select value="@Model.PurposeType">
+                    @foreach (string purposeType in Program.PurposeTypes)
+                    {
+                    <option value="@purposeType">@purposeType</option>}
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                Freie Beschreibung
+            </div>
+            <div class="col-sm-6">
+                <textarea value="@Model.PurposeFreeText"></textarea>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,14 +1,10 @@
-﻿using NGOStatuteGenerator.Models.GeneralMeeting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace NGOStatuteGenerator.Models
 {
-    public class GeneralMeetingInformation
+    public class GeneralMeetingInformation : PageModel
     {
-        public ContactTypes ContactTypeToSummon { get; set; }
+        public string ContactTypeToSummon { get; set; }
         public int SummoningPeriodIndays { get; set; }
         public bool SummoningRequiresAgenda { get; set; }
     }

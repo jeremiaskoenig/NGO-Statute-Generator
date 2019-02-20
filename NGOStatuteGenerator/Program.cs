@@ -12,8 +12,14 @@ namespace NGOStatuteGenerator
 {
     public class Program
     {
+        public static IEnumerable<string> PersonTypes;
+        public static IEnumerable<string> PurposeTypes;
+        public static IEnumerable<string> ExecutiveTypes;
         public static void Main(string[] args)
         {
+            PersonTypes = new List<string>();
+            PurposeTypes = new List<string>();
+            ExecutiveTypes = new List<string>();
             CreateWebHostBuilder(args).Build().Run();
         }
 

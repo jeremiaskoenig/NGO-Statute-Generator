@@ -1,0 +1,89 @@
+﻿@model ExecutiveInformation
+@{
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            Der Gesamtvorstand besteht aus
+        </div>
+        <div class="col-sm-6">
+            @foreach (string executiveType in Program.ExecutiveTypes)
+            {
+                <div class="row">
+                    <div class="col-sm-1">
+                        <input type="checkbox" value="@executiveType" />
+                    </div>
+                    <div class="col-sm-10">
+                        @executiveType
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+
+        </div>
+        <div class="col-sm-6">
+            <textarea placeholder="Weitere Personen"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            Der Vorstand besteht aus
+        </div>
+        <div class="col-sm-6">
+            @foreach (string executiveType in Program.ExecutiveTypes)
+            {
+                <div class="row">
+                    <div class="col-sm-1">
+                        <input type="checkbox" value="@executiveType" />
+                    </div>
+                    <div class="col-sm-10">
+                        @executiveType
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-sm-6">
+            <textarea placeholder="Weitere Personen"></textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-10">
+            <h5>Beirat</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+                
+        </div>
+        <div class="col-sm-9">
+            <input type="radio" />
+        </div>
+        <div class="col-sm-1">
+            <input type="radio" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8">
+            Soll der Vorstand verpflichtet werden, in allen wichtigen Angelegenheiten die Meinung des Beirats einzuholen?
+        </div>
+        <div class="col-sm-1">
+            <input type="radio" />
+        </div>
+        <div class="col-sm-1">
+            <input type="radio" />
+        </div>
+    </div>
+
+
+
+</div>

@@ -1,11 +1,12 @@
-﻿using NGOStatuteGenerator.Models.Membership;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using NGOStatuteGenerator.Models.Membership;
 using System.Collections.Generic;
 
 namespace NGOStatuteGenerator.Models
 {
-    public class MembershipInformation
+    public class MembershipInformation : PageModel
     {
-        private List<MembershipPersonTypes> MembershipPersonTypes { get; set; }
+        private List<string> MembershipPersonTypes { get; set; }
         public int ResignationPeriodInMonths { get; set; }
         public bool RequiresEntreeFee { get; set; }
         public int EntreeFee { get; set; }
