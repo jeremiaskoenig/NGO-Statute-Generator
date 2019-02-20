@@ -1,0 +1,20 @@
+{
+    "title": "§1 Name und Zweck",
+    "clauses": [
+        {
+            "text": "(1) Der Verein führt den Namen $ClubName$"
+        },
+        {
+            "text": "(2) $IsRegistered$",
+            "placeholders": {
+                "$IsRegistered$": {
+                    "true": "Er soll in das Vereinsregister eingetragen werden und führt danach den Zusatz \"e.V.\".",
+                    "false": "Er soll nicht in das Vereinsregister eingetragen werden."
+                }
+            }
+        },
+        {
+            "text": "(3) Der Sitz des Vereins ist $City$ ($PostCode$)"
+        }
+    ]
+}
