@@ -45,7 +45,7 @@
         <div class="row">
             <div class="col-sm-3">Anzahl Gründungmitglieder</div>
             <div class="col-sm-6">
-                <select value="@Model.FounderCount">
+                <select id="founderCount" value="@Model.FounderCount" onchange="hideFounderRows()">
                     @for (var i = 7; i < 10; i++)
                     {
                         <option value="@i">@i</option>}
@@ -56,9 +56,9 @@
         <div>
 
         </div>
-        @for (var i = 1; i < 10; i++)
+        @for (var i = 1; i <= 10; i++)
         {
-            <div class="row">
+            <div class="row" id="founderRow@i">
                 <div class="col-sm-3">Gründungsmitglied @i:</div>
                 <div class="col-sm-6"><input /></div>
             </div>
