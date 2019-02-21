@@ -1,4 +1,4 @@
-﻿@model MembershipInformation
+﻿@model Statute
 @{
 }
 
@@ -99,10 +99,10 @@
             Beitragshöhe
         </div>
         <div class="col-md-2 col-sm-3">
-            <input type="number" value="@Model.MembershipFee.Amount" />
+            <input type="number" asp-for="MembershipInformation.MembershipFee.Amount" />
         </div>
         <div class="col-md-2 col-sm-3">
-            <select value="@Model.MembershipFee.Period">
+            <select value="@Model.MembershipInformation.MembershipFee.Period">
                 @foreach (var option in Program.FeePeriodTypes)
                 {
                     <option value="@option">@option</option>

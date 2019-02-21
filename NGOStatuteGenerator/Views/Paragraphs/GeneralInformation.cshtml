@@ -1,4 +1,4 @@
-﻿@model GeneralInformation
+﻿@model Statute
 @{
 
 }
@@ -23,7 +23,7 @@
             <b>Name des Vereins</b>
         </div>
         <div class="col-xs-9">
-            <input type="text" asp-for="ClubName" />
+            <input type="text" placeholder="Vereinsname" asp-for="GeneralInformation.ClubName" />
         </div>
     </div>
     <div class="row">
@@ -31,15 +31,15 @@
             Sitz des Vereins
         </div>
         <div class="col-xs-9 col-sm-5">
-            <input placeholder="Ort" value="@Model.City" />           
+            <input placeholder="Ort" asp-for="@Model.GeneralInformation.City" />
         </div>
         <div class="col-sm-4 hidden-xs">
-            <input placeholder="Postleitzahl" value="@Model.PostCode" />
+            <input placeholder="Postleitzahl" asp-for="@Model.GeneralInformation.PostCode" />
         </div>
     </div>
     <div class="row visible-xs">
         <div class="col-xs-offset-3 col-xs-9">
-            <input placeholder="Postleitzahl" value="@Model.PostCode" />
+            <input placeholder="Postleitzahl" asp-for="@Model.GeneralInformation.PostCode" />
         </div>
     </div>
     <div class="row">
@@ -57,7 +57,7 @@
     <div class="row">
         <div class="col-xs-3">Anzahl</div>
         <div class="col-xs-9 col-sm-5">
-            <select id="founderCount" value="@Model.FounderCount" onchange="toggleFounderRows()">
+            <select id="founderCount" asp-for="@Model.GeneralInformation.FounderCount" onchange="toggleFounderRows()">
                 @for (var i = 7; i < 10; i++)
                 {
                     <option value="@i">@i</option>}
