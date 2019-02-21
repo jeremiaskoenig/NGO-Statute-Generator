@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-xs-12">
-        Zusammensetzung:
+        Zusammensetzung
     </div>
 </div>
 @foreach (string executiveType in Program.Executives)
@@ -31,23 +31,21 @@
 
 <div class="row">
     <div class="col-xs-3">
-        Bedingung für Beschlussfähigkeit:
+        Beschlussfähig bei
     </div>
-    <div class="col-xs-9">
-        <select>
-            @foreach (string condition in Program.ExecutiveTieBreakerOptions)
-            {
-                <option value="@condition">@condition</option>
-            }
-        </select>
+    <div class="col-xs-2">
+        <input id="miminalMembersRequired" type="number" placeholder="Anzahl" asp-For="MembershipInformation.MinimalMemberRequired" />
     </div>
-</div>
+    <div class="col-xs-6">
+        Teilnehmern
+    </div>
 
+</div>
 <div class="row">
     <div class="col-xs-3">
-        Bedingung für Mehrheit:
+        Mehrheit bei
     </div>
-    <div class="col-xs-9">
+    <div class="col-xs-6">
         <select>
             @foreach (string popularVoteOption in Program.PopularVoteOptions)
             {
