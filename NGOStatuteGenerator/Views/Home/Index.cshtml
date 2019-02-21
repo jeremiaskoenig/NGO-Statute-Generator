@@ -4,7 +4,6 @@
 }
 
 <div class="container">
-<<<<<<< HEAD
     <div class="row">
         <div class="col-md-2 hidden-sm hidden-xs"></div>
         <div class="col-md-8 col-sm-12">
@@ -21,7 +20,7 @@
 
                         <div id="paragraphOne" class="collapse" aria-labelledby="headingOne" data-parent="#statuteGenerator">
                             <div class="card-body">
-                                @Html.Partial("~/Views/Paragraphs/GeneralInformation.cshtml", Model.GeneralInformation)
+                                @await Html.PartialAsync("~/Views/Paragraphs/GeneralInformation.cshtml", Model)
                             </div>
                         </div>
                     </div>
@@ -35,42 +34,10 @@
                         </div>
                         <div id="paragraphTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#statuteGenerator">
                             <div class="card-body">
-                                @Html.Partial("~/Views/Paragraphs/PurposeInformation.cshtml", Model.PurposeInformation)
-=======
-    <form asp-action="Index">
-        <div class="accordion" id="statuteGenerator">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#paragraphOne" aria-expanded="false" aria-controls="paragraphOne">
-                            Generelle Informationen
-                        </button>
-                    </h5>
-                </div>
-
-                <div id="paragraphOne" class="collapse" aria-labelledby="headingOne" data-parent="#statuteGenerator">
-                    <div class="card-body">
-                        @await Html.PartialAsync("~/Views/Paragraphs/GeneralInformation.cshtml", Model)
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#paragraphTwo" aria-expanded="false" aria-controls="paragraphTwo">
-                            Zweck des Vereins
-                        </button>
-                    </h5>
-                </div>
-                <div id="paragraphTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#statuteGenerator">
-                    <div class="card-body">
-                        @await Html.PartialAsync("~/Views/Paragraphs/PurposeInformation.cshtml", Model)
->>>>>>> 38120dd77b48d9e0211003d7eec3596e6524eca7
-
+                                @await Html.PartialAsync("~/Views/Paragraphs/PurposeInformation.cshtml", Model)
                             </div>
                         </div>
                     </div>
-<<<<<<< HEAD
                     <div class="card">
                         <div class="card-header" id="headingFour">
                             <h5 class="mb-0">
@@ -81,7 +48,7 @@
                         </div>
                         <div id="paragraphFour" class="collapse" aria-labelledby="headingFour" data-parent="#statuteGenerator">
                             <div class="card-body">
-                                @Html.Partial("~/Views/Paragraphs/ExecutiveInformation.cshtml", Model.ExecutiveInformation)
+                                @await Html.PartialAsync("~/Views/Paragraphs/ExecutiveInformation.cshtml", Model)
                             </div>
                         </div>
                     </div>
@@ -95,7 +62,7 @@
                         </div>
                         <div id="paragraphThree" class="collapse" aria-labelledby="headingThree" data-parent="#statuteGenerator">
                             <div class="card-body">
-                                @Html.Partial("~/Views/Paragraphs/MembershipInformation.cshtml", Model.MembershipInformation)
+                                @await Html.PartialAsync("~/Views/Paragraphs/MembershipInformation.cshtml", Model)
                             </div>
                         </div>
                     </div>
@@ -109,62 +76,14 @@
                         </div>
                         <div id="paragraphSix" class="collapse" aria-labelledby="headingSix" data-parent="#statuteGenerator">
                             <div class="card-body">
-                                @Html.Partial("~/Views/Paragraphs/TerminationInformation.cshtml", Model.TerminationInformation)
+                                @await Html.PartialAsync("~/Views/Paragraphs/TerminationInformation.cshtml", Model)
                             </div>
                         </div>
-=======
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingFour">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#paragraphFour" aria-expanded="false" aria-controls="paragraphFour">
-                            Vorstand und Vorstandsversammlung
-                        </button>
-                    </h5>
-                </div>
-                <div id="paragraphFour" class="collapse" aria-labelledby="headingFour" data-parent="#statuteGenerator">
-                    <div class="card-body">
-                        @await Html.PartialAsync("~/Views/Paragraphs/ExecutiveInformation.cshtml", Model)
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingThree">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#paragraphThree" aria-expanded="false" aria-controls="paragraphThree">
-                            Mitglieder und Mitgliederversammlung
-                        </button>
-                    </h5>
-                </div>
-                <div id="paragraphThree" class="collapse" aria-labelledby="headingThree" data-parent="#statuteGenerator">
-                    <div class="card-body">
-                        @await Html.PartialAsync("~/Views/Paragraphs/MembershipInformation.cshtml", Model)
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingSix">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#paragraphSix" aria-expanded="false" aria-controls="paragraphSix">
-                            Auflösung
-                        </button>
-                    </h5>
-                </div>
-                <div id="paragraphSix" class="collapse" aria-labelledby="headingSix" data-parent="#statuteGenerator">
-                    <div class="card-body">
-                        @await Html.PartialAsync("~/Views/Paragraphs/TerminationInformation.cshtml", Model)
->>>>>>> 38120dd77b48d9e0211003d7eec3596e6524eca7
                     </div>
                 </div>
                 <input id="finalSubmit" type="submit" title="Abschicken" />
             </form>
         </div>
-<<<<<<< HEAD
         <div class="col-md-2 hidden-sm hidden-xs"></div>
     </div>
-=======
-    <input type="submit" />
-    </form>
->>>>>>> 38120dd77b48d9e0211003d7eec3596e6524eca7
 </div>
