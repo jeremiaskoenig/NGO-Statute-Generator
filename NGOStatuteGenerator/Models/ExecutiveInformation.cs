@@ -26,7 +26,7 @@ namespace NGOStatuteGenerator.Models
                     return $"{SummoningPeriodInWeeks} Wochen";
                 case "$ExecutivesRequiredForQuorum$":
                     return ExecutivesRequiredForQuorum.ToString();
-                case "$VorstandbesBeschlussMehrheit$ ":
+                case "$ExecutivePopularVoteOption$ ":
                     return PopularVote;
                 case "$VorstandsTieBreaker$":
                     return ExecutiveTieBreak;

@@ -62,7 +62,7 @@
         Mehrheit bei
     </div>
     <div class="col-xs-6">
-        <select asp-for="MembershipInformation.PopularVoteOption">
+        <select asp-for="MembershipInformation.PopularVote">
             @foreach (string popularVoteOption in Program.PopularVoteOptions)
             {
                 <option value="@popularVoteOption">@popularVoteOption</option>
