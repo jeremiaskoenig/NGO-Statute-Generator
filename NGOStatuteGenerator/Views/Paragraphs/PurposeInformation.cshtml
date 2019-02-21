@@ -10,7 +10,8 @@
             <select asp-for="PurposeInformation.PurposeType">
                 @foreach (string purposeType in Program.PurposeTypes)
                 {
-                    <option value="@purposeType">@purposeType</option>}
+                    <option value="@purposeType">@purposeType</option>
+                }
             </select>
         </div>
     </div>
@@ -24,7 +25,7 @@
     </div>
     <div class="row">
         <div class="col-xs-9 col-xs-offset-3">
-            <button type="submit" checked="true">Eingrenzung finden</button>
+            <button asp-page-handler="findPurpose" type="submit" checked="true">Eingrenzung finden</button>
         </div>
     </div>
     <div class="row">
@@ -41,7 +42,8 @@
             <select>
                 @foreach (string purposeType in Program.PurposeTypes)
                 {
-                    <option value="@purposeType">@purposeType</option>}
+                    <option value="@purposeType">@purposeType</option>
+                }
             </select>
         </div>
         <div class="col-xs-2">

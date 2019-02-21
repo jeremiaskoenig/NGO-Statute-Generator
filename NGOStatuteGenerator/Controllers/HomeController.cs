@@ -1,27 +1,46 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NGOStatuteGenerator.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Primitives;
 
 namespace NGOStatuteGenerator.Controllers
 {
     public class HomeController : Controller
     {
         [HttpPost]
-        public IActionResult Index(Statute model)
+        public IActionResult Index(Statute model, string handler)
         {
-            model.PurposeInformation.FindPurpose();
-            var doc = new TextGeneration.Document
+            if (handler == "findPurpose")
             {
-                FontName = "Verdana",
-                FontSize = 22
-            };
-
-            for (int i = 1; i <= 12; i++)
-            {
-                var paragraphInfo = Program.ReadJson<TextGeneration.Data.Paragraph>(Program.GetParagraphResourceFileName(i));
-                doc.Paragraphs.Add(paragraphInfo.BuildDocumentParagraph(model));
+                model.PurposeInformation.FindPurpose();
             }
+            else if (handler == "finalSubmit")
+            {
+                var doc = new TextGeneration.Document
+                {
+                    FontName = "Verdana",
+                    FontSize = 22
+                };
+
+                for (int i = 1; i <= 12; i++)
+                {
+                    var paragraphInfo = Program.ReadJson<TextGeneration.Data.Paragraph>(Program.GetParagraphResourceFileName(i));
+                    doc.Paragraphs.Add(paragraphInfo.BuildDocumentParagraph(model));
+                }
+
+                byte[] result;
+
+                using (var stream = new System.IO.MemoryStream())
+                using (var writer = new System.IO.StreamWriter(stream))
+                {
+                    writer.Write(doc.Build(model));
+                    result = stream.ToArray();
+                }
+
+                return File(result, "application/rtf", "satzung.rtf", false);
+            }
+
             
-            System.IO.File.WriteAllText("D:\\test.rtf", doc.Build(), System.Text.Encoding.ASCII);
             return View(model);
         }
 
