@@ -4,8 +4,7 @@
 }
 
 <div class="container">
-    <form asp-action="Index">       
-        <input type="submit" />
+    <form asp-action="Index">
         <div class="accordion" id="statuteGenerator">
             <div class="card">
                 <div class="card-header" id="headingOne">
@@ -18,7 +17,7 @@
 
                 <div id="paragraphOne" class="collapse" aria-labelledby="headingOne" data-parent="#statuteGenerator">
                     <div class="card-body">
-                        @Html.Partial("~/Views/Paragraphs/GeneralInformation.cshtml", Model.GeneralInformation)
+                        @await Html.PartialAsync("~/Views/Paragraphs/GeneralInformation.cshtml", Model)
                     </div>
                 </div>
             </div>
@@ -32,7 +31,7 @@
                 </div>
                 <div id="paragraphTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#statuteGenerator">
                     <div class="card-body">
-                        @Html.Partial("~/Views/Paragraphs/PurposeInformation.cshtml", Model.PurposeInformation)
+                        @await Html.PartialAsync("~/Views/Paragraphs/PurposeInformation.cshtml", Model)
 
                     </div>
                 </div>
@@ -47,7 +46,7 @@
                 </div>
                 <div id="paragraphFour" class="collapse" aria-labelledby="headingFour" data-parent="#statuteGenerator">
                     <div class="card-body">
-                        @Html.Partial("~/Views/Paragraphs/ExecutiveInformation.cshtml", Model.ExecutiveInformation)
+                        @await Html.PartialAsync("~/Views/Paragraphs/ExecutiveInformation.cshtml", Model)
                     </div>
                 </div>
             </div>
@@ -61,7 +60,7 @@
                 </div>
                 <div id="paragraphThree" class="collapse" aria-labelledby="headingThree" data-parent="#statuteGenerator">
                     <div class="card-body">
-                        @Html.Partial("~/Views/Paragraphs/MembershipInformation.cshtml", Model.MembershipInformation)
+                        @await Html.PartialAsync("~/Views/Paragraphs/MembershipInformation.cshtml", Model)
                     </div>
                 </div>
             </div>
@@ -75,10 +74,11 @@
                 </div>
                 <div id="paragraphSix" class="collapse" aria-labelledby="headingSix" data-parent="#statuteGenerator">
                     <div class="card-body">
-                        @Html.Partial("~/Views/Paragraphs/TerminationInformation.cshtml", Model.TerminationInformation)
+                        @await Html.PartialAsync("~/Views/Paragraphs/TerminationInformation.cshtml", Model)
                     </div>
                 </div>
             </div>
         </div>
+    <input type="submit" />
     </form>
 </div>

@@ -1,4 +1,4 @@
-﻿@model PurposeInformation
+﻿@model Statute
 @{
    
 }
@@ -10,7 +10,7 @@
                 Zweck
             </div>
             <div class="col-sm-6">
-                <select value="@Model.PurposeType">
+                <select value="@Model.PurposeInformation.PurposeType">
                     @foreach (string purposeType in Program.PurposeTypes)
                     {
                     <option value="@purposeType">@purposeType</option>}
@@ -22,7 +22,7 @@
                 Freie Beschreibung
             </div>
             <div class="col-sm-6">
-                <textarea value="@Model.PurposeFreeText"></textarea>
+                <textarea value="@Model.PurposeInformation.PurposeFreeText"></textarea>
             </div>
         </div>
     </div>
