@@ -19,8 +19,10 @@ function toggleRepresentation(required) {
     toggleButtons(required, "canBeRepresented", "cannotBeRepresented", "");
 }
 
-function toggleMembershipFeeInfo(required) {
-    toggleButtons(required, "feeRequired", "feeNotRequired", "feeInfo");
+function toggleMembershipFeeInfo(evt) {
+    for (var element of document.getElementsByClassName("feeInfo")) {
+        element.hidden = evt.target.checked;
+    }
 }
 
 function toggleButtons(required, buttonName1, buttonName2, rowName) {

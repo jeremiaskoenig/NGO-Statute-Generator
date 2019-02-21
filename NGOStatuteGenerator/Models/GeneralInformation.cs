@@ -14,7 +14,7 @@ namespace NGOStatuteGenerator.Models
         public string ClubToTransmitIfTerminated{ get; set; }
         public GeneralInformation()
         {
-            FounderNames = new List<string>();
+            FounderNames = new List<string>(10);
         }
 
         public string GetPlaceholderValue(string placeholder)

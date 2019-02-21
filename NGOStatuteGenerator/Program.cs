@@ -30,7 +30,6 @@ namespace NGOStatuteGenerator
         {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
-            // TextGeneration.Data.Paragraph para1 = ReadJson<TextGeneration.Data.Paragraph>(GetParagraphResourceFileName(1));
             ContactTypes = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
             Executives = ReadJson<string[]>(GetEnumResourceFileName("executives"));
             ExecutiveTasks = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
@@ -45,22 +44,6 @@ namespace NGOStatuteGenerator
 
             AllPurposes = ReadJson<PurposeItem[]>(Path.Combine("resources", "purposeItems.json"));
 
-            var genInfo = new Models.GeneralInformation
-            {
-                City = "Berlin",
-                ClubName = "1 KG Schnitzel e.V.",
-                PostCode = 10961
-            };
-
-            var doc = new TextGeneration.Document
-            {
-                FontName = "Calibri",
-                FontSize = 22
-            };
-            //doc.Paragraphs.Add(para1.BuildDocumentParagraph(genInfo));
-
-            File.WriteAllText("D:\\test.rtf", doc.Build(), System.Text.Encoding.ASCII);
-
             CreateWebHostBuilder(args).Build().Run();
         }
 
@@ -69,11 +52,12 @@ namespace NGOStatuteGenerator
             return Path.Combine("resources", "enums", $"{enumName}.json");
         }
 
-        private static string GetParagraphResourceFileName(int paragraph)
+        internal static string GetParagraphResourceFileName(int paragraph)
         {
             return Path.Combine("resources", "paragraphs", $"paragraph{paragraph}.json");
         }
-        private static T ReadJson<T>(string path)
+
+        internal static T ReadJson<T>(string path)
         {
             try
             {

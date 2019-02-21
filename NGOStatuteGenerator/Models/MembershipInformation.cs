@@ -20,6 +20,7 @@ namespace NGOStatuteGenerator.Models
         public bool RequiresMembershipFee { get; set; }
         public MembershipFee MembershipFee { get; set; }
         public int MinimalMemberRequired { get; set; }
+        public string PopularVoteOption { get; set; }
         public MembershipInformation()
         {
             MembershipFee = new MembershipFee();
@@ -31,6 +32,10 @@ namespace NGOStatuteGenerator.Models
             {
                 case "$MemberTypes$":
                     return $"{String.Join(", ", MembershipPersonTypes.GetRange(0, MembershipPersonTypes.Count - 2))} und {MembershipPersonTypes[MembershipPersonTypes.Count - 1]}";
+                case "$PopularVoteOption$":
+                    return PopularVoteOption;
+                case "$CanDecide$":
+                    return "";
                 default:
                     return "";
             }
