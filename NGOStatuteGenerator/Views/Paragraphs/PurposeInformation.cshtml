@@ -38,22 +38,30 @@
             </a>
 
         </div>
+        <script>
+            function updatePurposeLaymanTranslation() {
+                //purposeSelection.value
+                //purposeLaymanTranslations
+            }
+        </script>
         <div class="col-xs-7">
-            <select>
+            <select id="purposeSelection" onchange="">
                 @foreach (var purpose in Model.PurposeInformation.ApplicablePurposes)
                 {
                     <option value="@purpose.LegalPurpose">@purpose.LegalPurpose</option>
                 }
             </select>
-            @foreach (var purpose in Model.PurposeInformation.ApplicablePurposes)
-            {
-            <ul>
-                @foreach (var translation in purpose.LaymanTranslations)
+            <div id="purposeLaymanTranslations">
+                @foreach (var purpose in Model.PurposeInformation.ApplicablePurposes)
                 {
-                    <li>@translation</li>
+                    <ul id="layman_@purpose.LegalPurpose">
+                        @foreach (var translation in purpose.LaymanTranslations)
+                        {
+                            <li>@translation</li>
+                        }
+                    </ul>
                 }
-            </ul>
-            }
+            </div>
         </div>
         <div class="col-xs-2">
             <button style="background-color: lightcoral;">Reset</button>
