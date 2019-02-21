@@ -1,3 +1,4 @@
+<<<<<<< HEAD:NGOStatuteGenerator/Resources/Paragraphs/paragraph8.json
 {
   "title": "§ 7 Organe des Vereins",
   "clauses": [
@@ -9,3 +10,16 @@
     },
   ]
 }
+=======
+{
+  "title": "§ 7 Organe des Vereins",
+  "clauses": [
+    {
+      "text": "$Beitragsoptionen$"
+    },
+    {
+      "text": "Organe des Vereins sind der Vorstand und die Mitgliederversammlung."
+    }
+  ]
+}
+>>>>>>> 790ee8d98c0ec7df407015165cad33503297facc:NGOStatuteGenerator/Resources/paragraph8.json

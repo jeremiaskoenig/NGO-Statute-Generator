@@ -1,3 +1,4 @@
+<<<<<<< HEAD:NGOStatuteGenerator/Resources/Paragraphs/paragraph4.json
 {
   "title": "§ 3 Gemeinnützigkeit",
   "clauses": [
@@ -12,3 +13,19 @@
     },
   ]
 }
+=======
+{
+  "title": "§ 3 Gemeinnützigkeit",
+  "clauses": [
+    {
+      "text": "(1) Der Verein verfolgt ausschließlich und unmittelbar $AO-Zweck$e Zwecke im Sinne der Abgabenordnung. Der Verein ist selbstlos tätig und verfolgt nicht in erster Linie eigenwirtschaftliche Zwecke."
+    },
+    {
+      "text": "(2) Die Mittel des Vereins dürfen nur für satzungsmäßige Zwecke verwendet werden. Die Mitglieder erhalten keine Anteile am Überschuss und auch keine sonstigen Zuwendungen. Vereinsämter sind ehrenamtlich auszuüben."
+    },
+    {
+      "text": "(3) Es darf keine Person durch Ausgaben, die den Zwecken des Vereins fremd sind, oder durch unverhältnismäßig hohe Vergütungen begünstigt werden."
+    }
+  ]
+}
+>>>>>>> 790ee8d98c0ec7df407015165cad33503297facc:NGOStatuteGenerator/Resources/paragraph4.json
