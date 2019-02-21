@@ -8,13 +8,13 @@
       "text": "(2) Jede Satzungsänderung ist dem zuständigen Finanzamt unter Übersendung der geänderten Satzung anzuzeigen. Änderungen oder Ergänzungen der Satzung, die von der zuständigen Registerbehörde oder vom Finanzamt vorgeschrieben werden, werden vom Vorstand umgesetzt und bedürfen keiner Beschlussfassung durch die Mitgliederversammlung. Sie sind den Mitgliedern spätestens mit der Einladung zur nächsten Mitgliederversammlung mitzuteilen."
     },
     {
-      "text": "(3) Bei Auflösung des Vereins oder Wegfall des Zwecks des Vereins fällt das Vermögen des Vereins an $AndererVerein§ Der Anfallberechtigte hat das ihm anfallende Vermögen unmittelbar und ausschließlich für dessen gemeinnützige Vereinszwecke zu verwenden."
+      "text": "(3) Bei Auflösung des Vereins oder Wegfall des Zwecks des Vereins fällt das Vermögen des Vereins an $otherNGO$ Der Anfallberechtigte hat das ihm anfallende Vermögen unmittelbar und ausschließlich für dessen gemeinnützige Vereinszwecke zu verwenden."
     },
     {
-      "text": "Die Satzung wurde in der $Gruendungsversammlung$ vom $DatumGruendungsversammlung$ errichtet."
+      "text": "Die Satzung wurde in der $Gruendungsversammlung$ vom $FoundingDate$ errichtet."
     },
     {
-      "text": "$ListOfGruendungsmitglieder$"
+      "text": "$Founders$"
     }
   ]
 }
