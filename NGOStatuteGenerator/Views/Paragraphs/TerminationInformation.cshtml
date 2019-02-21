@@ -2,31 +2,19 @@
 @{
 
 }
-
-<div class="container">
-    <script>
-        function hideOtherClubName() {
-            var terminationConsequence = document.getElementById("terminationConsequence").value;
-            document.getElementById("otherClubName").hidden = (terminationConsequence == "TODO");
-
-        }
-    </script>
-    <div class="row">
-        <div class="col-sm-9">
-            Im Falle einer Auflösung muss das dem Verein zur Verfügung gestellte Geld einem anderen gemeinnützigen Verein zur Verfügung gestellt werden. Bitte benennen Sie diesen Verein.
-        </div>
+<div class="row">
+    <div class="col-sm-9">
+        Im Falle einer Auflösung muss das dem Verein zur Verfügung gestellte Geld einem anderen gemeinnützigen Verein zur Verfügung gestellt werden. Bitte benennen Sie diesen Verein.
     </div>
-    <div class="row">
-        <div class="col-sm-9">
-            
-        </div>
+</div>
+<div class="row">
+    <div class="col-sm-9"></div>
+</div>
+<div class="row" id="otherClubName">
+    <div class="col-sm-3">
+        <b>Vereinsname</b>
     </div>
-    <div class="row" id="otherClubName">
-        <div class="col-sm-3">
-            <b>Vereinsname</b>
-        </div>
-        <div class="col-sm-6">
-            <input type="text" value="" />
-        </div>
+    <div class="col-sm-6">
+        <input type="text" asp-for="GeneralInformation.ClubToTransmitIfTerminated" />
     </div>
 </div>

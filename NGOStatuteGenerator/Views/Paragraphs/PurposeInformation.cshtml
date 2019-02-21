@@ -22,4 +22,30 @@
             <textarea style="height: 140px;" value="@Model.PurposeInformation.PurposeFreeText"></textarea>
         </div>
     </div>
+    <div class="row">       
+        <div class="col-xs-9 col-xs-offset-3">
+            <button type="submit" checked="true">Eingrenzung finden</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            Eingrenzung
+            <a class="tooltip-icon" href="#" data-toggle="tooltip" title="In der Satzung muss ein passender Zweck aus einer Auswahl möglicher Optionen eingegeben werden">
+                <span style="vertical-align: middle; height: 24px; width: 24px;"
+                      class="tooltip-icon glyphicon glyphicon-info-sign">
+                </span>
+            </a>
+
+        </div>
+        <div class="col-xs-7">
+            <select value="@Model.PurposeInformation.PurposeType">
+                @foreach (string purposeType in Program.PurposeTypes)
+                {
+                    <option value="@purposeType">@purposeType</option>}
+            </select>
+        </div>
+        <div class="col-xs-2">
+           <button style="background-color: lightcoral;">Reset</button>
+        </div>
+    </div>
 </div>

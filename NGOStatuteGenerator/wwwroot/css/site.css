@@ -60,6 +60,13 @@ input, label, button, select, textarea {
     border-radius: 2px;
 }
 
+.tooltip-icon {
+    vertical-align: middle;
+    height: 100%;
+}
+input[type=number] {
+    text-align: right;
+}
 #finalSubmit {
     margin-top: 20px;
     height: 50px;

@@ -10,7 +10,7 @@ namespace NGOStatuteGenerator
     {
 
         public static IEnumerable<string> CanDecideConditions { get; set; }
-        public static IEnumerable<string> PopularVotesOptions { get; set; }
+        public static IEnumerable<string> PopularVoteOptions { get; set; }
         public static IEnumerable<string> ExecutiveTieBreakerOptions { get; set; }
 
         public static IEnumerable<string> GeneralMeetingRepresentedByOptions{ get; set; }
@@ -36,7 +36,7 @@ namespace NGOStatuteGenerator
 
             PersonTypes = ReadJson<string[]>(GetEnumResourceFileName("personTypes"));
             CanDecideConditions = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
-            PopularVotesOptions = ReadJson<string[]>(GetEnumResourceFileName("popularVoteOptions"));
+            PopularVoteOptions = ReadJson<string[]>(GetEnumResourceFileName("popularVoteOptions"));
             ExecutiveTieBreakerOptions = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
             GeneralMeetingRepresentedByOptions = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
 

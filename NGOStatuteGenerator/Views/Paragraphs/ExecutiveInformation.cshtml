@@ -17,16 +17,17 @@
             @executiveType
         </div>
     </div>
+
 }
-        <div class="row">
-            <div class="col-xs-offset-3 col-xs-1">
-                <input type="checkbox" value="others" />
-            </div>
-            <div class="col-xs-6">
-                <input placeholder="Andere Personen" />
-            </div>
-        </div>
+<div class="row">
+    <div class="col-xs-offset-3 col-xs-1">
+        <input type="checkbox" value="others" />
     </div>
+    <div class="col-xs-8">
+        <input placeholder="Andere Personen" />
+    </div>
+</div>
+
 
 <div class="row">
     <div class="col-xs-3">
@@ -48,7 +49,7 @@
     </div>
     <div class="col-xs-9">
         <select>
-            @foreach (string popularVoteOption in Program.PopularVotesOptions)
+            @foreach (string popularVoteOption in Program.PopularVoteOptions)
             {
                 <option value="@popularVoteOption">@popularVoteOption</option>
             }
@@ -69,113 +70,11 @@
         </select>
     </div>
 </div>
-<!--<div class="row">
-    <div class="col-sm-3">
-        Tagesordnung:
-    </div>
-    <div class="col-lg-2">
-        <button>Notwendig</button>
-    </div>
-    <div class="col-lg-2">
-        <button>Nicht notwendig</button>
-    </div>
-</div>-->
 <div class="row">
     <div class="col-xs-3">
         Einberufungsfrist (Wochen):
     </div>
-    <div class="col-xs-9 col-sm-5">
+    <div class="col-xs-9">
         <input type="number" />
     </div>
 </div>
-<!--<div class="row">
-    <div class="col-sm-2">
-        <h4>Beirat einrichten</h4>
-    </div>
-    <div class="col-lg-1">
-        <input type="checkbox" style="height: 30px;" />
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        <input type="checkbox" />
-    </div>
-    <div class="col-sm-9">
-        Wählbar sind nur Vereinsmitglieder, die dem Verein mindestens zwei Kalenderjahre angehören.
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-1">
-        <input type="checkbox" />
-    </div>
-    <div class="col-sm-8">
-        Die Mitglieder (oder eine bestimmte Anzahl an Mitgliedern) des Beirats sollen Erfahrungen im Vereinszweck haben.
-    </div>
-    <div class="col-lg-3">
-        <input type="number" placeholder="Personen mit Erfahrung im Vereinszweck" />
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-1">
-        <input type="checkbox" />
-    </div>
-    <div class="col-lg-8">
-        Soll der Vorstand verpflichtet werden, in allen wichtigen Angelegenheiten die Meinung des Beirats einzuholen?
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-1">
-        <input type="checkbox" />
-    </div>
-    <div class="col-lg-8">
-        Soll dem Beirat die Möglichkeit eingeräumt werden, die Einberufung einer Beiratssitzung selbst schriftlich zu verlangen?
-    </div>
-</div>-->
-<!--<div class="row">
-    <div class="col-sm-3">
-        Einladung per
-    </div>
-    <div class="col-lg-2">
-        <button>Schriftlich</button>
-    </div>
-    <div class="col-lg-2">
-        <button>E-Mail</button>
-    </div>
-    <div class="col-lg-2">
-        <button>Fax</button>
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-3">
-        Häufigkeit
-    </div>
-    <div class="col-lg-2">
-        <button>Vierteljährlich</button>
-    </div>
-    <div class="col-lg-2">
-        <button>Halbjährlich</button>
-    </div>
-    <div class="col-lg-2">
-        <button>Jährlich</button>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-3">
-        Tagesordnung:
-    </div>
-    <div class="col-lg-2">
-        <button>Notwendig</button>
-    </div>
-    <div class="col-lg-2">
-        <button>Nicht notwendig</button>
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-3">
-        Frist (Wochen):
-    </div>
-    <div class="col-lg-2">
-        <input type="number" />
-    </div>
-</div>-->

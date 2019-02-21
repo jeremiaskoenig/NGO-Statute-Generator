@@ -19,7 +19,6 @@ namespace NGOStatuteGenerator.Models
         public List<string> MembershipPersonTypes { get; set; }
         public bool RequiresMembershipFee { get; set; }
         public MembershipFee MembershipFee { get; set; }
-
         public bool GeneralMeetingRequiresMinimumMembers { get; set; }
         public int MinimalMemberRequired { get; set; }
         public MembershipInformation()

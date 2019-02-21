@@ -11,6 +11,7 @@ namespace NGOStatuteGenerator.Models
         public string City { get; set; }
         public int FounderCount { get; set; }
         public List<string> FounderNames { get; set; }
+        public string ClubToTransmitIfTerminated{ get; set; }
         public GeneralInformation()
         {
             FounderNames = new List<string>();

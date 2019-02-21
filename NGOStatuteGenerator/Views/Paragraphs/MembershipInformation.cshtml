@@ -2,112 +2,69 @@
 @{
 }
 
-<div class="container">
-    <script>
-        function toggleRepresentation(required) {
-            toggleButtons(required, "canBeRepresented", "cannotBeRepresented", "");
-        }
-
-        function toggleMembershipFeeInfo(required) {
-            toggleButtons(required, "feeRequired", "feeNotRequired", "feeInfo");
-        }
-
-        function toggleButtons(required, buttonName1, buttonName2, rowName) {
-            var yesButton = document.getElementById(buttonName1);
-            var noButton = document.getElementById(buttonName2);
-            var row = document.getElementById(rowName);
-            if (required) {
-                yesButton.setAttribute("checked", "true");
-                noButton.removeAttribute("checked");
-                if (row) { row.hidden = false };
-            } else {
-                yesButton.removeAttribute("checked");
-                noButton.setAttribute("checked", "true");
-                if (row) { row.hidden = true };
-            }
-        }
-
-        function reassignPersons() {
-            var personTypes = [];
-            var checkBoxes = document.getElementsByClassName(personTypes_checkbox);
-            for (var checkBox of checkBoxes) {
-                if (checkBox.checked) {
-                    personTypes.push(checkBox.value);
-                }
-            }
-            console.log(personTypes);
-        }
-    </script>
-    <div class="row">
-        <div class="col-xs-3">
-            Wer kann Mitglied werden?
-        </div>
-        <div class="col-xs-3">
-            @foreach (string option in Program.PersonTypes)
-            {
-                <div class="row">
-                    <div class="col-sm-1">
-                        <input type="checkbox" class="personTypes_checkbox" value="@option" onclick="reassignPersons()" />
-                    </div>
-                    <div class="col-sm-10">
-                        @option
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-3">
-            Können sich Mitglieder vertreten lassen?
-        </div>
-        <div class="col-xs-3">
-            <button type="button" id="canBeRepresented" onclick="toggleRepresentation(true)" checked="true">Ja</button>
-        </div>
-        <div class="col-xs-3">
-            <button type="button" id="cannotBeRepresented" onclick="toggleRepresentation(false)">Nein</button>
-        </div>
-    </div>
-    <div>
-        <div class="col-xs-3">
-            Welche Mitgliederversammlung ist beschlussfähig?
-        </div>
-        <div class="col-xs-3">
-            <select>
-                <option>Jede ordnungsgemäßge</option>
-                <option>Ab einer Mitgliederzahl</option>
-            </select>
-        </div>
-        <div class="col-xs-3">
-            <input type="number" placeholder="Mitgliederzahl" />
-        </div>
-    </div>
-
-
-    <div class="row">
-        <div class="col-sm-3">
-            Soll ein Beitrag erhoben werden?
-        </div>
-        <div class="col-md-2 col-sm-3">
-            <button type="button" id="feeRequired" onclick="toggleMembershipFeeInfo(true)" checked="true">Ja</button>
-        </div>
-        <div class="col-md-2 col-sm-3">
-            <button type="button" id="feeNotRequired" onclick="toggleMembershipFeeInfo(false)">Nein</button>
-        </div>
-    </div>
-    <div class="row" id="feeInfo">
-        <div class="col-sm-3">
-            Beitragshöhe
-        </div>
-        <div class="col-md-2 col-sm-3">
-            <input type="number" asp-for="MembershipInformation.MembershipFee.Amount" />
-        </div>
-        <div class="col-md-2 col-sm-3">
-            <select value="@Model.MembershipInformation.MembershipFee.Period">
-                @foreach (var option in Program.FeePeriodTypes)
-                {
-                    <option value="@option">@option</option>
-                }
-            </select>
-        </div>
+<div class="row">
+    <div class="col-xs-12">
+        Wer kann Mitglied werden?
     </div>
 </div>
+@foreach (string option in Program.PersonTypes)
+{
+    <div class="row">
+        <div class="col-xs-offset-3 col-xs-1">
+            <input type="checkbox" class="personTypes_checkbox" value="@option" onclick="reassignPersons()" />
+        </div>
+        <div class="col-xs-6">
+            @option
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div class="col-sm-3">
+        Soll ein Beitrag erhoben werden?
+    </div>
+    <div class="col-md-2 col-sm-3">
+        <button type="button" id="feeRequired" onclick="toggleMembershipFeeInfo(true)" checked="true">Ja</button>
+    </div>
+    <div class="col-md-2 col-sm-3">
+        <input type="number" asp-for="MembershipInformation.MembershipFee.Amount" />
+    </div>
+    <div class="col-md-2 col-sm-3">
+        <select value="@Model.MembershipInformation.MembershipFee.Period">
+            @foreach (var option in Program.FeePeriodTypes)
+            {
+                <option value="@option">@option</option>
+            }
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h4>Mitgliederversammlung</h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-3">
+        Beschlussfähigkeit:
+    </div>
+    <div class="col-xs-9">
+        <select>
+            <option>Jede ordentliche Mitgliederversammlung ist beschlussfähig</option>
+            <option>Mitgliederversammlungen sind ab ... Teinehmern beschlussfähig</option>
+        </select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-3">
+        Können sich Mitglieder vertreten lassen?
+    </div>
+    <div class="col-xs-3">
+        <button type="button" id="canBeRepresented" onclick="toggleRepresentation(true)" checked="true">Ja</button>
+    </div>
+    <div class="col-xs-3">
+        <button type="button" id="cannotBeRepresented" onclick="toggleRepresentation(false)">Nein</button>
+    </div>
+</div>
+
+
