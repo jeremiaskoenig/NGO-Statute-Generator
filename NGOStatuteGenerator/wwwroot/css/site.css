@@ -63,6 +63,9 @@ input, label, button, select, textarea {
     border-radius: 2px;
 }
 
+a {
+    color: #A6D785;
+}
 .tooltip-icon {
     vertical-align: middle;
     height: 100%;
