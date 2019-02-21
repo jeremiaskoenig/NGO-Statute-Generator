@@ -15,6 +15,16 @@ function toggleFounderRows() {
     }
 }
 
+function hideMembersForQuora() {
+    console.log(document.getElementById("quoraOptions"), document.getElementById("quoraOptions").value);
+    if (document.getElementById("quoraOptions").value == "1") {
+        document.getElementById("membersRequiredForQuora").value = 0;
+        document.getElementById("membersRequiredForQuora").hidden = true;
+    } else {
+        document.getElementById("membersRequiredForQuora").hidden = false;
+    }
+}
+
 function toggleRepresentation(required) {
     toggleButtons(required, "canBeRepresented", "cannotBeRepresented", "");
 }

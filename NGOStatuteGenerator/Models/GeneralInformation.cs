@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using NGOStatuteGenerator.TextGeneration;
+using System;
 using System.Collections.Generic;
 
 namespace NGOStatuteGenerator.Models
@@ -11,10 +12,12 @@ namespace NGOStatuteGenerator.Models
         public string City { get; set; }
         public int FounderCount { get; set; }
         public List<string> FounderNames { get; set; }
-        public string ClubToTransmitIfTerminated{ get; set; }
+        public string ClubToTransmitIfTerminated { get; set; }
+        public DateTime FoundingDate { get; set; }
         public GeneralInformation()
         {
             FounderNames = new List<string>(10);
+            FoundingDate = DateTime.Now;
         }
 
         public string GetPlaceholderValue(string placeholder)
@@ -25,6 +28,8 @@ namespace NGOStatuteGenerator.Models
                     return ClubName;
                 case "$ClubLocation$":
                     return $"{City}, {PostCode.ToString()}";
+                case "$FoundingDate$":
+                    return FoundingDate.ToString("dd.MM.yyyy");
                 default:
                     return "";
             }

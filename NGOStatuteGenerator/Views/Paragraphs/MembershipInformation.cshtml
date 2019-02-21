@@ -48,13 +48,13 @@
         Beschlussfähig bei
     </div>
     <div class="col-xs-6">
-        <select>
+        <select id="quoraOptions" onchange="hideMembersForQuora()">
             <option value="1">Jeder ordentlichen Mitgliederversammlung</option>
             <option value="2">Teilnehmerzahl:</option>
         </select>
     </div>
     <div class="col-xs-2">
-        <input id="miminalMembersRequired" type="number" placeholder="Anzahl" asp-For="MembershipInformation.MembersRequiredForQuorum" />
+        <input id="membersRequiredForQuora" type="number" placeholder="Anzahl" asp-For="MembershipInformation.MembersRequiredForQuorum" hidden />
     </div>
 </div>
 <div class="row">
