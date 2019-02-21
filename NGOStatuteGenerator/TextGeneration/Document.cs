@@ -47,8 +47,9 @@ namespace NGOStatuteGenerator.TextGeneration
                 }
             }
 
-            foreach (var name in model.GeneralInformation.FounderNames)
+            for (int i = 0; i < model.GeneralInformation.FounderCount; i++)
             {
+                string name = model.GeneralInformation.FounderNames[i];
                 builder.AppendLine(String.Format(SIGNING_LINE, RtfEscape(name, out indent)));
             }
 
