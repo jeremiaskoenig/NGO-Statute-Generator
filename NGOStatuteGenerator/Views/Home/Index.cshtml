@@ -4,82 +4,81 @@
 }
 
 <div class="container">
-    <form asp-action="Index">
-        <input type="text" asp-for="GeneralInformation.ClubName" />
+    <form asp-action="Index">       
         <input type="submit" />
+        <div class="accordion" id="statuteGenerator">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#paragraphOne" aria-expanded="false" aria-controls="paragraphOne">
+                            Generelle Informationen
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="paragraphOne" class="collapse" aria-labelledby="headingOne" data-parent="#statuteGenerator">
+                    <div class="card-body">
+                        @Html.Partial("~/Views/Paragraphs/GeneralInformation.cshtml", Model.GeneralInformation)
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#paragraphTwo" aria-expanded="false" aria-controls="paragraphTwo">
+                            Zweck des Vereins
+                        </button>
+                    </h5>
+                </div>
+                <div id="paragraphTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#statuteGenerator">
+                    <div class="card-body">
+                        @Html.Partial("~/Views/Paragraphs/PurposeInformation.cshtml", Model.PurposeInformation)
+
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFour">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#paragraphFour" aria-expanded="false" aria-controls="paragraphFour">
+                            Vorstand und Vorstandsversammlung
+                        </button>
+                    </h5>
+                </div>
+                <div id="paragraphFour" class="collapse" aria-labelledby="headingFour" data-parent="#statuteGenerator">
+                    <div class="card-body">
+                        @Html.Partial("~/Views/Paragraphs/ExecutiveInformation.cshtml", Model.ExecutiveInformation)
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#paragraphThree" aria-expanded="false" aria-controls="paragraphThree">
+                            Mitglieder und Mitgliederversammlung
+                        </button>
+                    </h5>
+                </div>
+                <div id="paragraphThree" class="collapse" aria-labelledby="headingThree" data-parent="#statuteGenerator">
+                    <div class="card-body">
+                        @Html.Partial("~/Views/Paragraphs/MembershipInformation.cshtml", Model.MembershipInformation)
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingSix">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#paragraphSix" aria-expanded="false" aria-controls="paragraphSix">
+                            Auflösung
+                        </button>
+                    </h5>
+                </div>
+                <div id="paragraphSix" class="collapse" aria-labelledby="headingSix" data-parent="#statuteGenerator">
+                    <div class="card-body">
+                        @Html.Partial("~/Views/Paragraphs/TerminationInformation.cshtml", Model.TerminationInformation)
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
-    <div class="accordion" id="statuteGenerator">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#paragraphOne" aria-expanded="false" aria-controls="paragraphOne">
-                        Generelle Informationen
-                    </button>
-                </h5>
-            </div>
-
-            <div id="paragraphOne" class="collapse" aria-labelledby="headingOne" data-parent="#statuteGenerator">
-                <div class="card-body">
-                    @Html.Partial("~/Views/Paragraphs/GeneralInformation.cshtml", Model.GeneralInformation)
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#paragraphTwo" aria-expanded="false" aria-controls="paragraphTwo">
-                        Zweck des Vereins
-                    </button>
-                </h5>
-            </div>
-            <div id="paragraphTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#statuteGenerator">
-                <div class="card-body">
-                    @Html.Partial("~/Views/Paragraphs/PurposeInformation.cshtml", Model.PurposeInformation)
-
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingFour">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#paragraphFour" aria-expanded="false" aria-controls="paragraphFour">
-                        Vorstand und Vorstandsversammlung
-                    </button>
-                </h5>
-            </div>
-            <div id="paragraphFour" class="collapse" aria-labelledby="headingFour" data-parent="#statuteGenerator">
-                <div class="card-body">
-                    @Html.Partial("~/Views/Paragraphs/ExecutiveInformation.cshtml", Model.ExecutiveInformation)
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingThree">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#paragraphThree" aria-expanded="false" aria-controls="paragraphThree">
-                        Mitglieder und Mitgliederversammlung
-                    </button>
-                </h5>
-            </div>
-            <div id="paragraphThree" class="collapse" aria-labelledby="headingThree" data-parent="#statuteGenerator">
-                <div class="card-body">
-                    @Html.Partial("~/Views/Paragraphs/MembershipInformation.cshtml", Model.MembershipInformation)
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingSix">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#paragraphSix" aria-expanded="false" aria-controls="paragraphSix">
-                        Auflösung
-                    </button>
-                </h5>
-            </div>
-            <div id="paragraphSix" class="collapse" aria-labelledby="headingSix" data-parent="#statuteGenerator">
-                <div class="card-body">
-                    @Html.Partial("~/Views/Paragraphs/TerminationInformation.cshtml", Model.TerminationInformation)
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
