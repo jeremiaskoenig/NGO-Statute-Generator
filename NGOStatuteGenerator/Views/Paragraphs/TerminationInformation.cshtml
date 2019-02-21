@@ -12,21 +12,18 @@
         }
     </script>
     <div class="row">
-        <div class="col-sm-3">
-            Im Falle einer Auflösung:
+        <div class="col-sm-9">
+            Im Falle einer Auflösung muss das dem Verein zur Verfügung gestellte Geld einem anderen gemeinnützigen Verein zur Verfügung gestellt werden. Bitte benennen Sie diesen Verein.
         </div>
-        <div class="col-sm-6">
-            <select id="terminationConsequence" onchange="hideOtherClubName()">
-                @foreach (var option in Program.Executives)
-                {
-                    <option value="@option">@option</option>
-                }
-            </select>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            
         </div>
     </div>
     <div class="row" id="otherClubName">
         <div class="col-sm-3">
-            Anderer Verein:
+            <b>Vereinsname</b>
         </div>
         <div class="col-sm-6">
             <input type="text" value="" />

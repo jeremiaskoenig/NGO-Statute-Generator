@@ -6,15 +6,13 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-3">
-            Die Mitgliederversammlung wird vertreten durch:
+            Mitglieder können sich bei Abwesenheit vertreten lassen
         </div>
-        <div class="col-sm-6">
-            <select value="@Model.RepresentedBy">
-                @foreach (string representatonOption in Program.GeneralMeetingRepresentedByOptions)
-                {
-                    <option value="@representatonOption">@representatonOption</option>
-                }
-            </select>
+        <div class="col-sm-2">
+            <button id="canBeRepresented" onclick="toggleRepresentation(true)" checked>Ja</button>
+        </div>
+        <div class="col-sm-2">
+            <button id="cannotBeRepresented" onclick="toggleRepresentation(false)">Nein</button>
         </div>
     </div>
 </div>

@@ -2,7 +2,7 @@
   "title": "§ 4 Mitgliedschaft",
   "clauses": [
     {
-      "text": "(1) Mitglied des Vereins können volljährige natürliche und juristische Personen sowie Personengesellschaften werden."
+      "text": "(1) Mitglied des Vereins können $MemberTypes$ werden."
     },
     {
       "text": "(2) Der Erwerb der Mitgliedschaft erfolgt durch schriftlichen Antrag an den Vorstand, der über die Aufnahme entscheidet."

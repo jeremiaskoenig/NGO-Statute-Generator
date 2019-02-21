@@ -4,23 +4,31 @@
 
 <div class="container">
     <script>
+        function toggleRepresentation(required) {
+            toggleButtons(required, "canBeRepresented", "cannotBeRepresented", "");
+        }
+
         function toggleMembershipFeeInfo(required) {
-            var freeRequireduButton = document.getElementById("feeRequired");
-            var freeNotRequireduButton = document.getElementById("feeNotRequired");
-            var feeInfoRow = document.getElementById("feeInfo");
+            toggleButtons(required, "feeRequired", "feeNotRequired", "feeInfo");
+        }
+
+        function toggleButtons(required, buttonName1, buttonName2, rowName) {
+            var yesButton = document.getElementById(buttonName1);
+            var noButton = document.getElementById(buttonName2);
+            var row = document.getElementById(rowName);
             if (required) {
-                freeRequireduButton.setAttribute("checked", "true"); 
-                freeNotRequireduButton.removeAttribute("checked");
-                feeInfo.hidden = false;
+                yesButton.setAttribute("checked", "true");
+                noButton.removeAttribute("checked");
+                if (row) { row.hidden = true };
             } else {
-                freeNotRequireduButton.setAttribute("checked", "true"); 
-                freeRequireduButton.removeAttribute("checked");
-                feeInfo.hidden = true;
+                yesButton.removeAttribute("checked");
+                noButton.setAttribute("checked", "true");
+                if (row) { row.hidden = true };
             }
         }
 
         function reassignPersons() {
-            var personTypes = [];            
+            var personTypes = [];
             var checkBoxes = document.getElementsByClassName(personTypes_checkbox);
             for (var checkBox of checkBoxes) {
                 if (checkBox.checked) {
@@ -33,7 +41,7 @@
     <div class="row">
         <div class="col-sm-3">
             Wer kann Mitglied werden?
-        </div>        
+        </div>
         <div class="col-sm-6">
             @foreach (string option in Program.PersonTypes)
             {
@@ -50,10 +58,21 @@
     </div>
     <div class="row">
         <div class="col-sm-3">
+            Mitglieder können sich bei Abwesenheit vertreten lassen
+        </div>
+        <div class="col-sm-2">
+            <button id="canBeRepresented" onclick="toggleRepresentation(true)" checked>Ja</button>
+        </div>
+        <div class="col-sm-2">
+            <button id="cannotBeRepresented" onclick="toggleRepresentation(false)">Nein</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
             Soll ein Beitrag erhoben werden?
         </div>
         <div class="col-sm-2">
-             <button id="feeRequired" onclick="toggleMembershipFeeInfo(true)" checked>Ja</button>
+            <button id="feeRequired" onclick="toggleMembershipFeeInfo(true)" checked>Ja</button>
         </div>
         <div class="col-sm-2">
             <button id="feeNotRequired" onclick="toggleMembershipFeeInfo(false)">Nein</button>
@@ -64,11 +83,11 @@
             Beitragshöhe
         </div>
         <div class="col-md-2 col-sm-3">
-            <input type="number" value="@Model.MembershipFee.Amount"/>
+            <input type="number" value="@Model.MembershipFee.Amount" />
         </div>
         <div class="col-md-2 col-sm-3">
             <select value="@Model.MembershipFee.Period">
-                @foreach(var option in Program.FeePeriodTypes)
+                @foreach (var option in Program.FeePeriodTypes)
                 {
                     <option value="@option">@option</option>
                 }
