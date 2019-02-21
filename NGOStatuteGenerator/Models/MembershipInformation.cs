@@ -50,7 +50,7 @@ namespace NGOStatuteGenerator.Models
                 case "$CanDecide$":
                     return "";
                 case "$CanBeRepresented$":
-                    return $"{(CanBeRepresented ? "" : "Mitglieder können ihre")}";
+                    return CanBeRepresented.ToString();
                 default:
                     return "";
             }
