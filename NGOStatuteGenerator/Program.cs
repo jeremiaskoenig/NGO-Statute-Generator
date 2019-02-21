@@ -59,7 +59,7 @@ namespace NGOStatuteGenerator
             };
             //doc.Paragraphs.Add(para1.BuildDocumentParagraph(genInfo));
 
-            File.WriteAllText("D:\\test.rtf", doc.Build(), System.Text.Encoding.ASCII);
+            //File.WriteAllText("D:\\test.rtf", doc.Build(model), System.Text.Encoding.ASCII);
 
             CreateWebHostBuilder(args).Build().Run();
         }

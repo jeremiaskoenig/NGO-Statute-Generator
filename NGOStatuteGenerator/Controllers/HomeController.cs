@@ -6,15 +6,29 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NGOStatuteGenerator.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Primitives;
 
 namespace NGOStatuteGenerator.Controllers
 {
     public class HomeController : Controller
     {
         [HttpPost]
-        public IActionResult Index(Statute model)
+        public IActionResult Index(Statute model, string handler)
         {
-            model.PurposeInformation.FindPurpose();
+            if (handler == "findPurpose")
+            {
+                model.PurposeInformation.FindPurpose();
+                Response.Redirect(Request.Path);
+            }
+            else if (handler == "finalSubmit")
+            {
+                //TODO: Render RTF and send as File to Download
+                Response.Redirect(Request.Path);
+                return File(new byte[] { }, "application/rtf");
+            }
+
+            
+
             return View(model);
         }
 
@@ -43,6 +57,6 @@ namespace NGOStatuteGenerator.Controllers
             return View();
         }
 
-     
+
     }
 }
