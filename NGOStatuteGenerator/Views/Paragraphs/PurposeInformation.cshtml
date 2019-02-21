@@ -40,29 +40,42 @@
         </div>
         <script>
             function updatePurposeLaymanTranslation() {
-                //purposeSelection.value
-                //purposeLaymanTranslations
+                var descendents = document.getElementById("purposeLaymanTranslations").getElementsByTagName('*');
+                var selector = document.getElementById("purposeSelection")
+                console.log(selector);
+                console.log(selector.value);
+
+                for (i = 0; i < descendents.length; ++i) {
+                    e = descendents[i];
+                    e.hidden = true;
+                }
+                var itemId = "layman_" + selector.value.split(" ").join("");
+                console.log(itemId);
+
+                var selectedLayman = document.getElementById(itemId);
+                console.log(selectedLayman);
+                selectedLayman.hidden = false;
             }
         </script>
         <div class="col-xs-7">
-            <select id="purposeSelection" onchange="">
+            <select id="purposeSelection" onchange="updatePurposeLaymanTranslation()">
                 @foreach (var purpose in Model.PurposeInformation.ApplicablePurposes)
                 {
                     <option value="@purpose.LegalPurpose">@purpose.LegalPurpose</option>
                 }
             </select>
-            <div id="purposeLaymanTranslations">
+            <div id="purposeLaymanTranslations" style="margin-top: 10px; font-style: italic;">
                 @foreach (var purpose in Model.PurposeInformation.ApplicablePurposes)
                 {
-                    <ul id="layman_@purpose.LegalPurpose">
-                        @foreach (var translation in purpose.LaymanTranslations)
-                        {
-                            <li>@translation</li>
-                        }
-                    </ul>
+                    <div id="layman_@purpose.LegalPurpose.Replace(" ", "")" hidden>
+                        @String.Join(", ", purpose.LaymanTranslations)
+                    </div>
                 }
             </div>
         </div>
+        <script>
+            updatePurposeLaymanTranslation();
+        </script>
         <div class="col-xs-2">
             <button style="background-color: lightcoral;">Reset</button>
         </div>
