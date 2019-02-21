@@ -54,12 +54,9 @@
             <div id="purposeLaymanTranslations">
                 @foreach (var purpose in Model.PurposeInformation.ApplicablePurposes)
                 {
-                    <ul id="layman_@purpose.LegalPurpose">
-                        @foreach (var translation in purpose.LaymanTranslations)
-                        {
-                            <li>@translation</li>
-                        }
-                    </ul>
+                    <div id="layman_@purpose.LegalPurpose">
+                        @String.Join(", ", purpose.LaymanTranslations)
+                    </div>
                 }
             </div>
         </div>
