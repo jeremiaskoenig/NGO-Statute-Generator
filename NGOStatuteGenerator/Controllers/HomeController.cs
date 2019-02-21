@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using NGOStatuteGenerator.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;
@@ -29,8 +24,24 @@ namespace NGOStatuteGenerator.Controllers
 
             
 
+            model.PurposeInformation.FindPurpose();
+            var doc = new TextGeneration.Document
+            {
+                FontName = "Verdana",
+                FontSize = 22
+            };
+
+            for (int i = 1; i <= 12; i++)
+            {
+                var paragraphInfo = Program.ReadJson<TextGeneration.Data.Paragraph>(Program.GetParagraphResourceFileName(i));
+                doc.Paragraphs.Add(paragraphInfo.BuildDocumentParagraph(model));
+            }
+            
+            System.IO.File.WriteAllText("D:\\test.rtf", doc.Build(), System.Text.Encoding.ASCII);
             return View(model);
         }
+
+
 
         [HttpGet]
         public IActionResult Index()
@@ -56,7 +67,5 @@ namespace NGOStatuteGenerator.Controllers
         {
             return View();
         }
-
-
     }
 }

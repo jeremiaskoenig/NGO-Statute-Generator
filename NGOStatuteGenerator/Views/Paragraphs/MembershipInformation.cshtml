@@ -11,7 +11,7 @@
 {
     <div class="row">
         <div class="col-xs-offset-3 col-xs-1">
-            <input type="checkbox" class="personTypes_checkbox" value="@option" onclick="reassignPersons()" />
+            <input type="checkbox" class="personTypes_checkbox" value="@option"  />
         </div>
         <div class="col-xs-6">
             @option
@@ -24,12 +24,12 @@
         Mitgliedsbeitrag:
     </div>
     <div class="col-xs-1">
-        <input type="checkbox" id="feeRequired" onclick="toggleMembershipFeeInfo(true)" checked />
+        <input type="checkbox" id="feeRequired" onclick="toggleMembershipFeeInfo()" checked />
     </div>
-    <div class="col-xs-2">
+    <div class="col-xs-2 feeInfo">
         <input style="padding-right:20px; text-align:right;" asp-for="MembershipInformation.MembershipFee.Amount" /><span style="margin-left:-20px;">€</span>
     </div>
-    <div class="col-xs-3">
+    <div class="col-xs-3 feeInfo">
         <select value="@Model.MembershipInformation.MembershipFee.Period">
             @foreach (var option in Program.FeePeriodTypes)
             {
@@ -62,7 +62,7 @@
         Mehrheit bei
     </div>
     <div class="col-xs-6">
-        <select>
+        <select asp-for="MembershipInformation.PopularVoteOption">
             @foreach (string popularVoteOption in Program.PopularVoteOptions)
             {
                 <option value="@popularVoteOption">@popularVoteOption</option>

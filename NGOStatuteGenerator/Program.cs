@@ -44,12 +44,6 @@ namespace NGOStatuteGenerator
 
             AllPurposes = ReadJson<PurposeItem[]>(Path.Combine("resources", "purposeItems.json"));
 
-            var doc = new TextGeneration.Document
-            {
-                FontName = "Calibri",
-                FontSize = 22
-            };
-
             CreateWebHostBuilder(args).Build().Run();
         }
 
@@ -58,11 +52,12 @@ namespace NGOStatuteGenerator
             return Path.Combine("resources", "enums", $"{enumName}.json");
         }
 
-        private static string GetParagraphResourceFileName(int paragraph)
+        internal static string GetParagraphResourceFileName(int paragraph)
         {
             return Path.Combine("resources", "paragraphs", $"paragraph{paragraph}.json");
         }
-        private static T ReadJson<T>(string path)
+
+        internal static T ReadJson<T>(string path)
         {
             try
             {

@@ -2,10 +2,10 @@
   "title": "§ 2 Zweck des Vereins",
   "clauses": [
     {
-      "text": "(1) Zweck des Vereins ist $PurposeType$"
+      "text": "(1) Der Zweck des Vereins ist $PurposeType$."
     },
     {
-      "text": "(2) Dieser Zweck wird insbesondere verwirklicht durch §PurposeFreeText§."
+      "text": "(2) Dieser Zweck wird insbesondere verwirklicht durch $PurposeFreeText$."
     }
   ]
 }

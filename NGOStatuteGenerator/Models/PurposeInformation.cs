@@ -30,6 +30,8 @@ namespace NGOStatuteGenerator.Models
             {
                 case "$PurposeType$":
                     return PurposeType;
+                case "$PurposeFreeText$":
+                    return PurposeFreeText;
                 default:
                     return "";
             }
