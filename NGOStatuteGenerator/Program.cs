@@ -1,21 +1,23 @@
-﻿using System;
+﻿using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 
 namespace NGOStatuteGenerator
 {
     public class Program
     {
+
+        public static IEnumerable<string> CanDecideConditions { get; set; }
+        public static IEnumerable<string> PopularVoteOptiones { get; set; }
+        public static IEnumerable<string> ExecutiveTieBreakerOptions { get; set; }
+
+        public static IEnumerable<string> GeneralMeetingRepresentedByOptions{ get; set; }
+
+        // Maybe not required
         public static IEnumerable<string> ContactTypes { get; private set; }
         public static IEnumerable<string> Executives { get; private set; }
-
         public static IEnumerable<string> ExecutiveTasks { get; private set; }
         public static IEnumerable<string> MembershipPeriod { get; private set; }
         public static IEnumerable<string> PersonTypes { get; private set; }
@@ -25,20 +27,24 @@ namespace NGOStatuteGenerator
         {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
-            TextGeneration.Data.Paragraph para1 = ReadJson<TextGeneration.Data.Paragraph>("resources/paragraph1.json");
-            ContactTypes = ReadJson<string[]>("resources/contactTypes.json");
-            Executives = ReadJson<string[]>("resources/executives.json");
-            ExecutiveTasks = ReadJson<string[]>("resources/executiveTasks.json");
-            MembershipPeriod = ReadJson<string[]>("resources/membershipPeriod.json");
-            PersonTypes = ReadJson<string[]>("resources/personTypes.json");
-            PurposeTypes = ReadJson<string[]>("resources/purposeTypes.json");
+            // TextGeneration.Data.Paragraph para1 = ReadJson<TextGeneration.Data.Paragraph>(GetParagraphResourceFileName(1));
+            ContactTypes = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
+            Executives = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
+            ExecutiveTasks = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
+            MembershipPeriod = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
+            PersonTypes = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
+            PurposeTypes = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
+
+            CanDecideConditions = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
+            PopularVoteOptiones = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
+            ExecutiveTieBreakerOptions = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
+            GeneralMeetingRepresentedByOptions = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
 
             var genInfo = new Models.GeneralInformation
             {
                 City = "Berlin",
                 ClubName = "1 KG Schnitzel e.V.",
-                PostCode = 10961,
-                IsRegistered = true
+                PostCode = 10961
             };
 
             var doc = new TextGeneration.Document
@@ -46,13 +52,22 @@ namespace NGOStatuteGenerator
                 FontName = "Calibri",
                 FontSize = 22
             };
-            doc.Paragraphs.Add(para1.BuildDocumentParagraph(genInfo));
+            //doc.Paragraphs.Add(para1.BuildDocumentParagraph(genInfo));
 
             File.WriteAllText("D:\\test.rtf", doc.Build(), System.Text.Encoding.ASCII);
 
             CreateWebHostBuilder(args).Build().Run();
         }
 
+        private static string GetEnumResourceFileName(string enumName)
+        {
+            return Path.Combine("resources", "enums", $"{enumName}.json");
+        }
+
+        private static string GetParagraphResourceFileName(int paragraph)
+        {
+            return Path.Combine("resources", "enums", $"paragraph{paragraph}.json");
+        }
         private static T ReadJson<T>(string path)
         {
             try

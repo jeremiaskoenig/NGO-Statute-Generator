@@ -11,22 +11,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Resources\contactTypes.json">
+    <Content Update="Resources\Enums\contactTypes.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="Resources\executives.json">
+    <Content Update="Resources\Enums\executives.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="Resources\membershipPeriod.json">
+    <Content Update="Resources\Enums\membershipPeriod.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="Resources\paragraph1.json">
+    <Content Update="Resources\Paragraphs\paragraph1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="Resources\personTypes.json">
+    <Content Update="Resources\Enums\personTypes.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="Resources\purposeTypes.json">
+    <Content Update="Resources\Enums\purposeTypes.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

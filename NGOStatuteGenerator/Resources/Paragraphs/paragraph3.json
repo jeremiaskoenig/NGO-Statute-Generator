@@ -1,0 +1,11 @@
+{
+  "title": "§ 2 Zweck des Vereins",
+  "clauses": [
+    {
+      "text": "(1) Zweck des Vereins ist $GeneralPurpose$"
+    },
+    {
+      "text": "(2) Dieser Zweck wird insbesondere verwirklicht durch §ConcretePurpose§."
+    }
+  ]
+}

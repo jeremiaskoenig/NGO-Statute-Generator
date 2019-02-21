@@ -5,9 +5,6 @@
 
 <div class="container">
     <script>
-        function toggleIsRegistered() {
-            @Model.IsRegistered = document.getElementById("isRegistered").checked;
-        }
         function toggleFounderRows() {
             var founderCount = parseInt(document.getElementById("founderCount").value);
             for (var i = 1; i <= 10; i++) {
@@ -28,17 +25,6 @@
             </div>
             <div class="col-sm-6">
                 <input value="@Model.ClubName" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-3">
-                Der Verein soll eingetragen werden
-            </div>
-            <div class="col-sm-3">
-                <button>Ja</button>
-            </div>
-            <div class="col-sm-3">
-                <button>Nein</button>
             </div>
         </div>
         <div class="row">

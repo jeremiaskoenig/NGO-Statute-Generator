@@ -1,0 +1,11 @@
+{
+  "title": "§ 1 Name, Sitz, Rechtsform",
+  "clauses": [
+    {
+      "text": "(1) Der Verein führt den Namen $ClubName$"
+    },
+    {
+      "text": "(2) Der Verein hat seinen Sitz in $ClubLocation$ und ist in das Vereinsregister einzutragen. Nach der Eintragung führt er den Zusatz /„e. V./“."
+    }
+  ]
+}

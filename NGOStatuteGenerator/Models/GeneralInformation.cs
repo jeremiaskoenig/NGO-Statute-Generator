@@ -7,7 +7,6 @@ namespace NGOStatuteGenerator.Models
     public class GeneralInformation : PageModel, IPlaceholderSupplier
     {
         public string ClubName { get; set; }
-        public bool IsRegistered { get; set; }
         public int PostCode { get; set; }
         public string City { get; set; }
         public int FounderCount { get; set; }
@@ -21,12 +20,12 @@ namespace NGOStatuteGenerator.Models
         {
             switch (placeholder)
             {
-                case "$ClubName$": return ClubName;
-                case "$IsRegistered$": return IsRegistered ? "true" : "false";
-                case "$PostCode$": return PostCode.ToString();
-                case "$City$": return City;
-
-                default: return placeholder;
+                case "$ClubName$":
+                    return ClubName;
+                case "$ClubLocation$":
+                    return $"{City} {PostCode.ToString()}";
+                default:
+                    return placeholder;
             }
         }
     }

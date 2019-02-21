@@ -4,4 +4,17 @@
 }
 
 <div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            Die Mitgliederversammlung wird vertreten durch:
+        </div>
+        <div class="col-sm-6">
+            <select value="@Model.RepresentedBy">
+                @foreach (string representatonOption in Program.GeneralMeetingRepresentedByOptions)
+                {
+                    <option value="@representatonOption">@representatonOption</option>
+                }
+            </select>
+        </div>
+    </div>
 </div>
