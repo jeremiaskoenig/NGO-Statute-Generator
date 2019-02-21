@@ -40,11 +40,20 @@
         </div>
         <div class="col-xs-7">
             <select>
-                @foreach (string purposeType in Program.PurposeTypes)
+                @foreach (var purpose in Model.PurposeInformation.ApplicablePurposes)
                 {
-                    <option value="@purposeType">@purposeType</option>
+                    <option value="@purpose.LegalPurpose">@purpose.LegalPurpose</option>
                 }
             </select>
+            @foreach (var purpose in Model.PurposeInformation.ApplicablePurposes)
+            {
+            <ul>
+                @foreach (var translation in purpose.LaymanTranslations)
+                {
+                    <li>@translation</li>
+                }
+            </ul>
+            }
         </div>
         <div class="col-xs-2">
             <button style="background-color: lightcoral;">Reset</button>

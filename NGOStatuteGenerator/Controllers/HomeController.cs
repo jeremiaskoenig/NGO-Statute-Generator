@@ -30,14 +30,10 @@ namespace NGOStatuteGenerator.Controllers
 
                 byte[] result;
 
-                using (var stream = new System.IO.MemoryStream())
-                using (var writer = new System.IO.StreamWriter(stream))
-                {
-                    writer.Write(doc.Build(model));
-                    result = stream.ToArray();
-                }
+                string docText = doc.Build(model);
+                result = System.Text.Encoding.ASCII.GetBytes(docText);
 
-                return File(result, "application/rtf", "satzung.rtf", false);
+                return File(result, "application/rtf", "satzung.rtf", true);
             }
 
             

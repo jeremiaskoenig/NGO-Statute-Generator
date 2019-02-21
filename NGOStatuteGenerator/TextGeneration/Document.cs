@@ -35,16 +35,21 @@ namespace NGOStatuteGenerator.TextGeneration
             int indent = 0;
 
             builder.AppendLine(String.Format(RTF_HEADER, FontName, FontSize).Replace("[", "{").Replace("]", "}"));
-            builder.AppendLine(String.Format(TITLE_FORMAT, RtfEscape(Title, out indent), indent));
-            
+            builder.AppendLine(String.Format(TITLE_FORMAT, RtfEscape(BuildText(model, Title), out indent), indent));
+
             foreach (var para in Paragraphs)
             {
-                builder.AppendLine(String.Format(HEADER_FORMAT, RtfEscape(para.Header, out indent), indent));
-                
+                builder.AppendLine(String.Format(HEADER_FORMAT, RtfEscape(BuildText(model, para.Header), out indent), indent));
+
                 foreach (var line in para.Body)
                 {
                     builder.AppendLine(String.Format(CLAUSE_FORMAT, RtfEscape(line, out indent), indent));
                 }
+            }
+
+            foreach (var name in model.GeneralInformation.FounderNames)
+            {
+                builder.AppendLine(String.Format(SIGNING_LINE, RtfEscape(name, out indent)));
             }
 
             builder.AppendLine("}");
@@ -52,9 +57,13 @@ namespace NGOStatuteGenerator.TextGeneration
             return builder.ToString();
         }
 
-        public string BuildHeader(IPlaceholderSupplier dataSource)
+        public string BuildText(IPlaceholderSupplier dataSource, string text)
         {
-            return PlaceholderRegex.Replace(Title, match => dataSource.GetPlaceholderValue(match.Value));
+            if (text == null)
+            {
+                return null;
+            }
+            return PlaceholderRegex.Replace(text, match => dataSource.GetPlaceholderValue(match.Value));
         }
 
         internal static readonly Regex PlaceholderRegex = new Regex(@"\$[^\$]+\$", RegexOptions.Compiled);
@@ -96,5 +105,6 @@ namespace NGOStatuteGenerator.TextGeneration
         private const string TITLE_FORMAT = @"\pard\li{1}\sa200\sl276\slmult1\f0\ul\b {0}\par\ulnone\b0";
         private const string HEADER_FORMAT = @"\pard\li{1}\sa200\sl276\slmult1\f0\b {0}\par\b0";
         private const string CLAUSE_FORMAT = @"\pard\li{1}\sa200\sl276\slmult1\qj\f0 {0}\par";
+        private const string SIGNING_LINE = @"\pard\sa200\sl276\slmult1\qj\f0 ____________________________ ({0})   ________________ (Datum)\par";
     }
 }
