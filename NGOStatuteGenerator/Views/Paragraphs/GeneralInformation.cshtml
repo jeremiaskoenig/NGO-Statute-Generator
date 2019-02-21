@@ -3,87 +3,85 @@
 
 }
 
-<div class="container">
-    <script>
-        function toggleFounderRows() {
-            var founderCount = parseInt(document.getElementById("founderCount").value);
-            for (var i = 1; i <= 10; i++) {
-                var row = document.getElementById("founderRow_" + i.toString());
-                if (row && i > founderCount) {
-                    row.disabled = true;
-                    row.hidden = true;
-                } else if (row && i <= founderCount) {
-                    row.hidden = false;
-                }
+<script>
+    function toggleFounderRows() {
+        var founderCount = parseInt(document.getElementById("founderCount").value);
+        for (var i = 1; i <= 10; i++) {
+            var row = document.getElementById("founderRow_" + i.toString());
+            if (row && i > founderCount) {
+                row.disabled = true;
+                row.hidden = true;
+            } else if (row && i <= founderCount) {
+                row.hidden = false;
             }
         }
-    </script>
-    <div class="paragraph-section" id="generalInformation">
-        <div class="row">
-            <div class="col-sm-3">
-                <b>Name des Vereins</b>
-            </div>
-            <div class="col-sm-6">
-                <input type="text" asp-for="ClubName" />
-            </div>
+    }
+</script>
+<div class="paragraph-section" id="generalInformation">
+    <div class="row">
+        <div class="col-xs-3">
+            <b>Name des Vereins</b>
         </div>
-        <div class="row">
-            <div class="col-sm-3">
-                Sitz des Vereins
-            </div>
-            <div class="col-sm-6">
-                <input placeholder="Ort" value="@Model.City" />
-            </div>
+        <div class="col-xs-9">
+            <input type="text" asp-for="ClubName" />
         </div>
-        <div class="row">
-            <div class="col-sm-offset-3 col-sm-6">
-                <input placeholder="Postleitzahl" value="@Model.PostCode" />
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            Sitz des Vereins
         </div>
-        <div class="row">
-            <div class="col-sm-3">Einrichtung der Satzung</div>
-            <div class="col-sm-6">
-                <input type="date" />
-            </div>
+        <div class="col-xs-9 col-sm-5">
+            <input placeholder="Ort" value="@Model.City" />           
         </div>
-        <div class="row" style="margin-top: 40px;">
-            <div class="col-sm-9"><b>Gründungsmitglieder</b></div>
+        <div class="col-sm-4 hidden-xs">
+            <input placeholder="Postleitzahl" value="@Model.PostCode" />
         </div>
-        <div class="row">
-            <div class="col-sm-3">Anzahl</div>
-            <div class="col-sm-6">
-                <select id="founderCount" value="@Model.FounderCount" onchange="toggleFounderRows()">
-                    @for (var i = 7; i < 10; i++)
-                    {
-                        <option value="@i">@i</option>}
-                    <option value="10">10 oder mehr</option>
-                </select>
-            </div>
+    </div>
+    <div class="row visible-xs">
+        <div class="col-xs-offset-3 col-xs-9">
+            <input placeholder="Postleitzahl" value="@Model.PostCode" />
         </div>
-        <div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            Einrichtung der Satzung
+        </div>
+        <div class="col-xs-9">
+            <input type="date" />
+        </div>
+    </div>
+    <div class="row" style="margin: 40px 0 20px 0;">
+        <div class="col-xs-9 col-sm-3 col-md-3"><b>Gründungsmitglieder</b></div>
+        <div class="hidden-xs col-sm-9 col-md-9" style="font-style: italic;">Es müssen mindestens 7 Gründungsmitglieder angegeben werden.</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">Anzahl</div>
+        <div class="col-xs-9 col-sm-5">
+            <select id="founderCount" value="@Model.FounderCount" onchange="toggleFounderRows()">
+                @for (var i = 7; i < 10; i++)
+                {
+                    <option value="@i">@i</option>}
+                <option value="10">10 oder mehr</option>
+            </select>
+        </div>
+    </div>
+    <div>
 
-        </div>
-        @for (var i = 1; i <= 7; i++)
-        {
-            <div class="row" id="founderRow_@i">
-                <div class="col-sm-3">Gründungsmitglied @i:</div>
-                <div class="col-sm-6"><input /></div>
-            </div>
-        }
-        @for (var i = 8; i <= 10; i++)
-        {
-            <div class="row" id="founderRow_@i" hidden>
-                <div class="col-sm-3">Gründungsmitglied @i:</div>
-                <div class="col-sm-6"><input /></div>
-            </div>
-        }
     </div>
-    <div class="row" id="otherClubName">
-        <div class="col-sm-3">
-            Anderer Verein:
+    @for (var i = 1; i <= 7; i++)
+    {
+        <div class="row" id="founderRow_@i">
+            <div class="col-xs-3 visible-xs">Mitglied @i:</div>
+            <div class="col-sm-3 hidden-xs">Gründungsmitglied @i:</div>
+            <div class="col-xs-9 col-sm-8 col-md-7"><input /></div>
         </div>
-        <div class="col-sm-6">
-            <input type="text" value="" />
+    }
+    @for (var i = 8; i <= 10; i++)
+    {
+        <div class="row" id="founderRow_@i" hidden>
+            <div class="col-xs-3 visible-xs">Mitglied @i:</div>
+            <div class="col-sm-3 hidden-xs">Gründungsmitglied @i:</div>
+            <div class="col-xs-9 col-sm-8 col-md-7"><input /></div>
         </div>
-    </div>
+    }
 </div>

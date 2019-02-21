@@ -19,7 +19,7 @@
             if (required) {
                 yesButton.setAttribute("checked", "true");
                 noButton.removeAttribute("checked");
-                if (row) { row.hidden = true };
+                if (row) { row.hidden = false };
             } else {
                 yesButton.removeAttribute("checked");
                 noButton.setAttribute("checked", "true");
@@ -39,10 +39,10 @@
         }
     </script>
     <div class="row">
-        <div class="col-sm-3">
+        <div class="col-xs-3">
             Wer kann Mitglied werden?
         </div>
-        <div class="col-sm-6">
+        <div class="col-xs-3">
             @foreach (string option in Program.PersonTypes)
             {
                 <div class="row">
@@ -57,25 +57,41 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-3">
-            Mitglieder können sich bei Abwesenheit vertreten lassen
+        <div class="col-xs-3">
+            Können sich Mitglieder vertreten lassen?
         </div>
-        <div class="col-sm-2">
-            <button id="canBeRepresented" onclick="toggleRepresentation(true)" checked>Ja</button>
+        <div class="col-xs-3">
+            <button type="button" id="canBeRepresented" onclick="toggleRepresentation(true)" checked="true">Ja</button>
         </div>
-        <div class="col-sm-2">
-            <button id="cannotBeRepresented" onclick="toggleRepresentation(false)">Nein</button>
+        <div class="col-xs-3">
+            <button type="button" id="cannotBeRepresented" onclick="toggleRepresentation(false)">Nein</button>
         </div>
     </div>
+    <div>
+        <div class="col-xs-3">
+            Welche Mitgliederversammlung ist beschlussfähig?
+        </div>
+        <div class="col-xs-3">
+            <select>
+                <option>Jede ordnungsgemäßge</option>
+                <option>Ab einer Mitgliederzahl</option>
+            </select>
+        </div>
+        <div class="col-xs-3">
+            <input type="number" placeholder="Mitgliederzahl" />
+        </div>
+    </div>
+
+
     <div class="row">
         <div class="col-sm-3">
             Soll ein Beitrag erhoben werden?
         </div>
-        <div class="col-sm-2">
-            <button id="feeRequired" onclick="toggleMembershipFeeInfo(true)" checked>Ja</button>
+        <div class="col-md-2 col-sm-3">
+            <button type="button" id="feeRequired" onclick="toggleMembershipFeeInfo(true)" checked="true">Ja</button>
         </div>
-        <div class="col-sm-2">
-            <button id="feeNotRequired" onclick="toggleMembershipFeeInfo(false)">Nein</button>
+        <div class="col-md-2 col-sm-3">
+            <button type="button" id="feeNotRequired" onclick="toggleMembershipFeeInfo(false)">Nein</button>
         </div>
     </div>
     <div class="row" id="feeInfo">

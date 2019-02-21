@@ -10,7 +10,7 @@ namespace NGOStatuteGenerator
     {
 
         public static IEnumerable<string> CanDecideConditions { get; set; }
-        public static IEnumerable<string> PopularVoteOptiones { get; set; }
+        public static IEnumerable<string> PopularVotesOptions { get; set; }
         public static IEnumerable<string> ExecutiveTieBreakerOptions { get; set; }
 
         public static IEnumerable<string> GeneralMeetingRepresentedByOptions{ get; set; }
@@ -29,14 +29,14 @@ namespace NGOStatuteGenerator
 
             // TextGeneration.Data.Paragraph para1 = ReadJson<TextGeneration.Data.Paragraph>(GetParagraphResourceFileName(1));
             ContactTypes = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
-            Executives = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
+            Executives = ReadJson<string[]>(GetEnumResourceFileName("executives"));
             ExecutiveTasks = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
             FeePeriodTypes = ReadJson<string[]>(GetEnumResourceFileName("feePeriodTypes"));           
-            PurposeTypes = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
+            PurposeTypes = ReadJson<string[]>(GetEnumResourceFileName("purposeTypes"));
 
             PersonTypes = ReadJson<string[]>(GetEnumResourceFileName("personTypes"));
             CanDecideConditions = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
-            PopularVoteOptiones = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
+            PopularVotesOptions = ReadJson<string[]>(GetEnumResourceFileName("popularVoteOptions"));
             ExecutiveTieBreakerOptions = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
             GeneralMeetingRepresentedByOptions = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
 
