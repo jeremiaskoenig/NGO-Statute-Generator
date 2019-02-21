@@ -10,7 +10,7 @@ namespace NGOStatuteGenerator.Models
         public List<string> BoardAsOfParagraph26 { get; set; }
         public int TermLengthInYears { get; set; }
         public int SummoningPeriodInWeeks { get; set; }
-        public string CanDecideCondition { get; set; }
+        public int ExecutivesRequiredForQuorum { get; set; }
         public string PopularVote { get; set; }
         public string ExecutiveTieBreak { get; set; }
         public ExecutiveInformation()
@@ -22,14 +22,16 @@ namespace NGOStatuteGenerator.Models
         {
             switch (placeholder)
             {
-                case "$Vorstandsfrist$":
+                case "$SummoningPeriodInWeeks$":
                     return $"{SummoningPeriodInWeeks} Wochen";
-                case "$Vorstandbeschlussfaehigkeit$":
-                    return CanDecideCondition;
+                case "$ExecutivesRequiredForQuorum$":
+                    return ExecutivesRequiredForQuorum.ToString();
                 case "$VorstandbesBeschlussMehrheit$ ":
                     return PopularVote;
                 case "$VorstandsTieBreaker$":
                     return ExecutiveTieBreak;
+                case "$TermLengthInYears$":
+                    return $"{(TermLengthInYears == 1 ? $"{TermLengthInYears} Jahr" : $"{TermLengthInYears} Jahren")}";
                 default: return "";
             }
         }

@@ -19,8 +19,9 @@ namespace NGOStatuteGenerator.Models
         public List<string> MembershipPersonTypes { get; set; }
         public bool RequiresMembershipFee { get; set; }
         public MembershipFee MembershipFee { get; set; }
-        public int MinimalMemberRequired { get; set; }
+        public int MembersRequiredForQuorum { get; set; }
         public string PopularVoteOption { get; set; }
+        public bool CanBeRepresented { get; set; }
         public MembershipInformation()
         {
 
@@ -37,7 +38,7 @@ namespace NGOStatuteGenerator.Models
                     {
                         return "keine Mitgliedbeiträge";
                     }
-                    return $"";
+                    return $"{MembershipFee.Period} Mitgliedbeiträge in Höhe von {MembershipFee.Amount}";
                 case "$MemberTypes$":
                     if (MembershipPersonTypes.Count > 0)
                     {
@@ -48,6 +49,8 @@ namespace NGOStatuteGenerator.Models
                     return PopularVoteOption;
                 case "$CanDecide$":
                     return "";
+                case "$CanBeRepresented$":
+                    return $"{(CanBeRepresented ? "" : "Mitglieder können ihre")}";
                 default:
                     return "";
             }

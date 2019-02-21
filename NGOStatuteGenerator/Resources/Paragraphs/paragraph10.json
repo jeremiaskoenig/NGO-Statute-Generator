@@ -2,7 +2,7 @@
   "title": "§ 9 Mitgliederversammlung",
   "clauses": [
     {
-      "text": "(1) Die Mitgliederversammlung ist oberstes Organ des Vereins. In der Mitgliederversammlung hat jedes Mitglied eine Stimme. $GA-Representation$"
+      "text": "(1) Die Mitgliederversammlung ist oberstes Organ des Vereins. In der Mitgliederversammlung hat jedes Mitglied eine Stimme. $CanBeRepresented$"
     },
     {
       "text": "(2) Die Mitgliederversammlung ist für folgende Aufgaben zuständig:\na) Entgegennahme und Genehmigung des Jahresberichts des Vorstands\nb) Entlastung des Vorstandes und der Kassenprüfer\nc) Wahl und Abberufung der Mitglieder des Vorstandes und der Kassenprüfer\nd) Festsetzung der Höhe der Jahresbeiträge, insbesondere des Mindestbeitrages\ne) Beschlussfassung über die Beschwerde gegen die Ablehnung eines Aufnahmeantrages sowie die Berufung gegen einen Ausschließungsbeschluss durch den Vorstand\nf) Ernennung von Ehrenmitgliedern\ng) Beschlussfassung über grundlegende Entscheidungen für die Förderpolitik des Vereines."
@@ -18,6 +18,6 @@
     },
     {
       "text": "(6) Über jede Mitgliederversammlung ist ein Protokoll zu errichten, das vom jeweiligen Versammlungsleiter und dem Protokollführer zu unterzeichnen ist."
-    },
+    }
   ]
 }
