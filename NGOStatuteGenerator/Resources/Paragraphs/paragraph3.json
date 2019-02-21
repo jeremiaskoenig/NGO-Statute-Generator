@@ -5,7 +5,7 @@
       "text": "(1) Zweck des Vereins ist $PurposeType$"
     },
     {
-      "text": "(2) Dieser Zweck wird insbesondere verwirklicht durch §PurposeFreeText§."
+      "text": "(2) Dieser Zweck wird insbesondere verwirklicht durch $PurposeFreeText$."
     }
   ]
 }

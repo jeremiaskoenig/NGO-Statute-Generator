@@ -5,10 +5,10 @@
       "text": "(1) Der Vorstand besteht aus mindestens einem Mitglied. Über die Zahl der Vorstandsmitglieder entscheidet die Mitgliederversammlung bei der Bestellung des Vorstands."
     },
     {
-      "text": "(2) $Vertretungsoptionen$"
+      "text": "(2) $RepresentationOptions$"
     },
     {
-      "text": "(3) Der Vorstand wird von der Mitgliederversammlung auf die Dauer von $Vorstandsdauer$, gerechnet von der Wahl an, gewählt. Er bleibt bis zur Wahl eines neuen Vorstandes im Amt. Scheidet ein Mitglied des Vorstands während der Amtsperiode aus, so können die verbleibenden Vorstandsmitglieder ein Ersatzmitglied für die restliche Amtsdauer des Ausgeschiedenen benennen."
+      "text": "(3) Der Vorstand wird von der Mitgliederversammlung auf die Dauer von $BoardPeriod$, gerechnet von der Wahl an, gewählt. Er bleibt bis zur Wahl eines neuen Vorstandes im Amt. Scheidet ein Mitglied des Vorstands während der Amtsperiode aus, so können die verbleibenden Vorstandsmitglieder ein Ersatzmitglied für die restliche Amtsdauer des Ausgeschiedenen benennen."
     },
     {
       "text": "(4) Der Vorstand ist für alle Angelegenheiten des Vereins zuständig, soweit sie nicht durch die Satzung oder zwingende gesetzliche Vorschriften einem anderen Vereinsorgan zugewiesen sind. Der Vorstand führt die laufenden Geschäfte des Vereins. Er hat dabei vor allem folgende Aufgaben:/n
@@ -22,7 +22,7 @@
       d) Unterrichtung der Mitglieder über die Vereinsangelegenheiten, insbesondere durch Erstellung eines Jahresberichtes."
     },
     {
-      "text": "(5) Der Vorstand fasst seine Beschlüsse im Allgemeinen in Vorstandssitzungen, die vom 1. Vorsitzenden, bei dessen Verhinderung vom 2. Vorsitzenden, schriftlich, fernmündlich, oder per e-Mail einzuberufen sind. Eine Mitteilung der Tagesordnung ist nicht erforderlich. Eine Einberufungsfrist von $Vorstandsfrist$ ist einzuhalten. Der Vorstand ist beschlussfähig, wenn  mindestens $Vorstandbeschlussfaehigkeit$ Vorstandsmitglieder anwesend sind. $VorstandbesBeschlussMehrheit$. Bei Stimmengleichheit entscheidet die Stimme des Sitzungsleiters. Ein Vorstandsbeschluss kann auf schriftlichem Wege gefasst werden, wenn alle Vorstandsmitglieder ihre Zustimmung zu der zu beschließenden Regelung erklären. Über die Beschlüsse des Vorstands ist ein Protokoll zu führen, das durch den Sitzungsleiter zu unterschreiben ist."
+      "text": "(5) Der Vorstand fasst seine Beschlüsse im Allgemeinen in Vorstandssitzungen, die vom 1. Vorsitzenden, bei dessen Verhinderung vom 2. Vorsitzenden, schriftlich, fernmündlich, oder per e-Mail einzuberufen sind. Eine Mitteilung der Tagesordnung ist nicht erforderlich. Eine Einberufungsfrist von $BoardInvitationLimit$ ist einzuhalten. $BoardQuorum$. $BoardMajority$. Bei Stimmengleichheit entscheidet die Stimme des Sitzungsleiters. Ein Vorstandsbeschluss kann auf schriftlichem Wege gefasst werden, wenn alle Vorstandsmitglieder ihre Zustimmung zu der zu beschließenden Regelung erklären. Über die Beschlüsse des Vorstands ist ein Protokoll zu führen, das durch den Sitzungsleiter zu unterschreiben ist."
     }
   ]
 }
