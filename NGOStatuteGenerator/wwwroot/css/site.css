@@ -60,6 +60,10 @@ input, label, button, select, textarea {
     border-radius: 2px;
 }
 
+button[checked=true] {
+    background-color: lightgreen;
+}
+
 input {
     padding-left: 5px;
 }

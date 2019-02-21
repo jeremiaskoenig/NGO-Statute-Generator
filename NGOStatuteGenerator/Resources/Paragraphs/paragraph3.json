@@ -1,25 +1,11 @@
-<<<<<<< HEAD:NGOStatuteGenerator/Resources/Paragraphs/paragraph3.json
 {
   "title": "§ 2 Zweck des Vereins",
   "clauses": [
     {
-      "text": "(1) Zweck des Vereins ist $GeneralPurpose$"
+      "text": "(1) Zweck des Vereins ist $PurposeType$"
     },
     {
       "text": "(2) Dieser Zweck wird insbesondere verwirklicht durch §ConcretePurpose§."
     }
   ]
 }
-=======
-{
-  "title": "§ 2 Zweck des Vereins",
-  "clauses": [
-    {
-      "text": "(1) Zweck des Vereins ist $AO-Zweck$"
-    },
-    {
-      "text": "(2) Dieser Zweck wird insbesondere verwirklicht durch $Konkretisierung-Zweck$."
-    }
-  ]
-}
->>>>>>> 790ee8d98c0ec7df407015165cad33503297facc:NGOStatuteGenerator/Resources/paragraph3.json

@@ -1,20 +1,11 @@
-<<<<<<< HEAD:NGOStatuteGenerator/Resources/Paragraphs/paragraph10.json
 {
   "title": "§ 9 Mitgliederversammlung",
   "clauses": [
     {
-      "text": "(1) Die Mitgliederversammlung ist oberstes Organ des Vereins. In der Mitgliederversammlung hat jedes Mitglied eine Stimme. $MitgliedsversammlungVertretung$
-"
+      "text": "(1) Die Mitgliederversammlung ist oberstes Organ des Vereins. In der Mitgliederversammlung hat jedes Mitglied eine Stimme. $MitgliedsversammlungVertretung$"
     },
     {
-      "text": "(2) Die Mitgliederversammlung ist für folgende Aufgaben zuständig:
-      a) Entgegennahme und Genehmigung des Jahresberichts des Vorstands;
-      b) Entlastung des Vorstandes und der Kassenprüfer;
-      c) Wahl und Abberufung der Mitglieder des Vorstandes und der Kassenprüfer;
-      d) Festsetzung der Höhe der Jahresbeiträge, insbesondere des Mindestbeitrages;
-      e) Beschlussfassung über die Beschwerde gegen die Ablehnung eines Aufnahmeantrages sowie die Berufung gegen einen Ausschließungsbeschluss durch den Vorstand;
-      f) Ernennung von Ehrenmitgliedern;
-      g) Beschlussfassung über grundlegende Entscheidungen für die Förderpolitik des Vereines."
+      "text": "(2) Die Mitgliederversammlung ist für folgende Aufgaben zuständig:\na) Entgegennahme und Genehmigung des Jahresberichts des Vorstands\nb) Entlastung des Vorstandes und der Kassenprüfer\nc) Wahl und Abberufung der Mitglieder des Vorstandes und der Kassenprüfer\nd) Festsetzung der Höhe der Jahresbeiträge, insbesondere des Mindestbeitrages\ne) Beschlussfassung über die Beschwerde gegen die Ablehnung eines Aufnahmeantrages sowie die Berufung gegen einen Ausschließungsbeschluss durch den Vorstand\nf) Ernennung von Ehrenmitgliedern\ng) Beschlussfassung über grundlegende Entscheidungen für die Förderpolitik des Vereines."
     },
     {
       "text": "(3) Die Einberufung der Mitgliederversammlung erfolgt durch den ersten Vorsitzenden, bei dessen Verhinderung durch den zweiten Vorsitzenden. Die Einberufung muss mindestens zwei Wochen vor dem Tag der Versammlung unter Angabe der Tagesordnung schriftlich erfolgen. Die Frist beginnt mit dem auf die Absendung der Einberufung folgenden Tag. Eine außerordentliche Mitgliederversammlung muss einberufen werden, wenn ein Fünftel der Mitglieder unter Angabe der Gründe einen schriftlichen Antrag beim Vorstand stellt."
@@ -30,43 +21,3 @@
     },
   ]
 }
-=======
-{
-  "title": "§ 9 Mitgliederversammlung",
-  "clauses": [
-    {
-      "text": "(1) Die Mitgliederversammlung ist oberstes Organ des Vereins. In der Mitgliederversammlung hat jedes Mitglied eine Stimme. $MitgliedsversammlungVertretung$
-"
-    },
-    {
-      "text": "(2) Die Mitgliederversammlung ist für folgende Aufgaben zuständig:/n
-      /n
-      a) Entgegennahme und Genehmigung des Jahresberichts des Vorstands;/n
-      /n
-      b) Entlastung des Vorstandes und der Kassenprüfer;/n
-      /n
-      c) Wahl und Abberufung der Mitglieder des Vorstandes und der Kassenprüfer;/n
-      /n
-      d) Festsetzung der Höhe der Jahresbeiträge, insbesondere des Mindestbeitrages;/n
-      /n
-      e) Beschlussfassung über die Beschwerde gegen die Ablehnung eines Aufnahmeantrages sowie die Berufung gegen einen Ausschließungsbeschluss durch den Vorstand;/n
-      /n
-      f) Ernennung von Ehrenmitgliedern;/n
-      /n
-      g) Beschlussfassung über grundlegende Entscheidungen für die Förderpolitik des Vereines."
-    },
-    {
-      "text": "(3) Die Einberufung der Mitgliederversammlung erfolgt durch den ersten Vorsitzenden, bei dessen Verhinderung durch den zweiten Vorsitzenden. Die Einberufung muss mindestens zwei Wochen vor dem Tag der Versammlung unter Angabe der Tagesordnung schriftlich erfolgen. Die Frist beginnt mit dem auf die Absendung der Einberufung folgenden Tag. Eine außerordentliche Mitgliederversammlung muss einberufen werden, wenn ein Fünftel der Mitglieder unter Angabe der Gründe einen schriftlichen Antrag beim Vorstand stellt."
-    },
-    {
-      "text": "(4) Längstens bis eine Woche vor dem Tag der Mitgliederversammlung kann jedes Mitglied beim Vorstand schriftlich die Ergänzung der Tagesordnung um weitere Angelegenheiten, nicht jedoch Satzungsänderungen, beantragen. Die Tagesordnung ist zu Beginn der Mitgliederversammlung durch den Versammlungsleiter entsprechend zu ergänzen. Über Anträge auf Ergänzung der Tagesordnung, die erst in der Mitgliederversammlung gestellt werden, beschließt die Mitgliederversammlung. Zur Annahme des Antrags ist eine Mehrheit von drei Vierteln der abgegebenen gültigen Stimmen erforderlich."
-    },
-    {
-      "text": "(5) Jede ordnungsgemäß geladene Mitgliederversammlung ist beschlussfähig. Die Mitgliederversammlung fasst Beschlüsse mit einfacher Mehrheit der abgegebenen Stimmen, soweit durch Gesetz oder diese Satzung keine abweichenden Mehrheiten vorgeschrieben sind. Enthaltungen werden als nicht erschienene Stimmen gewertet. Bei Stimmengleichheit entscheidet die Stimme des Versammlungsleiters. Bei Wahlen entscheidet bei Stimmengleichheit das Los. Die Abstimmungsart bestimmt der Versammlungsleiter. Bei Wahlen ist schriftlich und geheim abzustimmen, soweit nicht die Mitgliederversammlung eine andere Art der Abstimmung beschließt."
-    },
-    {
-      "text": "(6) Über jede Mitgliederversammlung ist ein Protokoll zu errichten, das vom jeweiligen Versammlungsleiter und dem Protokollführer zu unterzeichnen ist."
-    }
-  ]
-}
->>>>>>> 790ee8d98c0ec7df407015165cad33503297facc:NGOStatuteGenerator/Resources/paragraph10.json

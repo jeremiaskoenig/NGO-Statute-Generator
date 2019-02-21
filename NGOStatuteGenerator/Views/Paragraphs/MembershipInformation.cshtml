@@ -3,7 +3,76 @@
 }
 
 <div class="container">
-    <div class="paragraph-section" id="membership">
-        
+    <script>
+        function toggleMembershipFeeInfo(required) {
+            var freeRequireduButton = document.getElementById("feeRequired");
+            var freeNotRequireduButton = document.getElementById("feeNotRequired");
+            var feeInfoRow = document.getElementById("feeInfo");
+            if (required) {
+                freeRequireduButton.setAttribute("checked", "true"); 
+                freeNotRequireduButton.removeAttribute("checked");
+                feeInfo.hidden = false;
+            } else {
+                freeNotRequireduButton.setAttribute("checked", "true"); 
+                freeRequireduButton.removeAttribute("checked");
+                feeInfo.hidden = true;
+            }
+        }
+
+        function reassignPersons() {
+            var personTypes = [];            
+            var checkBoxes = document.getElementsByClassName(personTypes_checkbox);
+            for (var checkBox of checkBoxes) {
+                if (checkBox.checked) {
+                    personTypes.push(checkBox.value);
+                }
+            }
+            console.log(personTypes);
+        }
+    </script>
+    <div class="row">
+        <div class="col-sm-3">
+            Wer kann Mitglied werden?
+        </div>        
+        <div class="col-sm-6">
+            @foreach (string option in Program.PersonTypes)
+            {
+                <div class="row">
+                    <div class="col-sm-1">
+                        <input type="checkbox" class="personTypes_checkbox" value="@option" onclick="reassignPersons()" />
+                    </div>
+                    <div class="col-sm-10">
+                        @option
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            Soll ein Beitrag erhoben werden?
+        </div>
+        <div class="col-sm-2">
+             <button id="feeRequired" onclick="toggleMembershipFeeInfo(true)" checked>Ja</button>
+        </div>
+        <div class="col-sm-2">
+            <button id="feeNotRequired" onclick="toggleMembershipFeeInfo(false)">Nein</button>
+        </div>
+    </div>
+    <div class="row" id="feeInfo">
+        <div class="col-sm-3">
+            Beitragshöhe
+        </div>
+        <div class="col-md-2 col-sm-3">
+            <input type="number" value="@Model.MembershipFee.Amount"/>
+        </div>
+        <div class="col-md-2 col-sm-3">
+            <select value="@Model.MembershipFee.Period">
+                @foreach(var option in Program.FeePeriodTypes)
+                {
+                    <option value="@option">@option</option>
+                }
+            </select>
+        </div>
     </div>
 </div>

@@ -1,16 +1,8 @@
 {
-<<<<<<< HEAD:NGOStatuteGenerator/Resources/Paragraphs/paragraph1.json
-  "title": "Satzung des [Vereinsname]",
-  "clauses": [
-    {
-      "text": ""
-    },
-=======
   "title": "Satzung des $Vereinsname$",
   "clauses": [
     {
       "text": ""
     }
->>>>>>> 790ee8d98c0ec7df407015165cad33503297facc:NGOStatuteGenerator/Resources/paragraph1.json
   ]
 }

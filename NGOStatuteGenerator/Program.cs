@@ -19,7 +19,7 @@ namespace NGOStatuteGenerator
         public static IEnumerable<string> ContactTypes { get; private set; }
         public static IEnumerable<string> Executives { get; private set; }
         public static IEnumerable<string> ExecutiveTasks { get; private set; }
-        public static IEnumerable<string> MembershipPeriod { get; private set; }
+        public static IEnumerable<string> FeePeriodTypes { get; private set; }
         public static IEnumerable<string> PersonTypes { get; private set; }
         public static IEnumerable<string> PurposeTypes { get; private set; }
 
@@ -31,10 +31,10 @@ namespace NGOStatuteGenerator
             ContactTypes = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
             Executives = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
             ExecutiveTasks = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
-            MembershipPeriod = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
-            PersonTypes = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
+            FeePeriodTypes = ReadJson<string[]>(GetEnumResourceFileName("feePeriodTypes"));           
             PurposeTypes = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
 
+            PersonTypes = ReadJson<string[]>(GetEnumResourceFileName("personTypes"));
             CanDecideConditions = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
             PopularVoteOptiones = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
             ExecutiveTieBreakerOptions = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));

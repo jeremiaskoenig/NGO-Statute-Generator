@@ -1,4 +1,3 @@
-<<<<<<< HEAD:NGOStatuteGenerator/Resources/Paragraphs/paragraph7.json
 {
   "title": "§ 6 Beiträge",
   "clauses": [
@@ -10,16 +9,3 @@
     },
   ]
 }
-=======
-{
-  "title": "§ 6 Beiträge",
-  "clauses": [
-    {
-      "text": "$Beitragsoptionen$"
-    },
-    {
-      "text": "(2) Für das Jahr des Vereinsbeitritts ist der volle Jahresbeitrag zu bezahlen. Die Festsetzung der Fälligkeit und Zahlungsweise des Beitrages obliegt dem Vorstand. Der Vorstand kann in begründeten Einzelfällen bestimmen, dass der Beitrag in anderer Form als durch Geldzahlung erbracht wird oder Beitragsleistungen stunden."
-    }
-  ]
-}
->>>>>>> 790ee8d98c0ec7df407015165cad33503297facc:NGOStatuteGenerator/Resources/paragraph7.json
