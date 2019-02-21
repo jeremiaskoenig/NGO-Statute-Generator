@@ -29,6 +29,9 @@
     <Content Update="Resources\Enums\purposeTypes.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Update="Resources\purposeItems.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

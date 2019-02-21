@@ -10,6 +10,8 @@ namespace NGOStatuteGenerator.Models
     {
         [JsonProperty("purpose")]
         public string LegalPurpose { get; set; }
+        [JsonProperty("type")]
+        public string PurposeType { get; set; }
         [JsonProperty("laymanTranslations")]
         public IEnumerable<string> LaymanTranslations { get; set; }
         [JsonProperty("keywords")]

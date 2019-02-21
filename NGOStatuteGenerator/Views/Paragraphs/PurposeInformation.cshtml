@@ -7,7 +7,7 @@
             Zweck
         </div>
         <div class="col-xs-9">
-            <select value="@Model.PurposeInformation.PurposeType">
+            <select asp-for="PurposeInformation.PurposeType">
                 @foreach (string purposeType in Program.PurposeTypes)
                 {
                     <option value="@purposeType">@purposeType</option>}

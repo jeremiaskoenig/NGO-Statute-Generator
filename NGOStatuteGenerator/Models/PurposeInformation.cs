@@ -21,7 +21,7 @@ namespace NGOStatuteGenerator.Models
         public void FindPurpose()
         {
             var words = PurposeFreeText?.Split(' ').Distinct().ToArray();
-            ApplicablePurposes = Program.AllPurposes.Where(x => x.Keywords.Intersect(words).Any());
+            ApplicablePurposes = Program.AllPurposes.Where(x => x.PurposeType == PurposeType).Where(x => x.Keywords.Intersect(words).Any());
         }
 
         public string GetPlaceholderValue(string placeholder)
