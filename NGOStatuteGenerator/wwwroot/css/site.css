@@ -49,6 +49,9 @@ body {
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
 }
+.card-body {
+    padding: 15px;
+}
 .paragraph-section {
     padding: 20px 0;
 }
@@ -64,10 +67,10 @@ input, label, button, select, textarea {
     vertical-align: middle;
     height: 100%;
 }
-input[type=number] {
+input[type=number], input[type=date] {
     text-align: right;
 }
-#finalSubmit {
+.finalSubmit {
     margin-top: 20px;
     height: 50px;
     background: #A6D785;
