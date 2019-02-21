@@ -14,6 +14,7 @@ namespace NGOStatuteGenerator.Controllers
         [HttpPost]
         public IActionResult Index(Statute model)
         {
+            model.PurposeInformation.FindPurpose();
             return View(model);
         }
 

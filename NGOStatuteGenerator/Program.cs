@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using NGOStatuteGenerator.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -14,6 +15,8 @@ namespace NGOStatuteGenerator
         public static IEnumerable<string> ExecutiveTieBreakerOptions { get; set; }
 
         public static IEnumerable<string> GeneralMeetingRepresentedByOptions{ get; set; }
+
+        public static IEnumerable<PurposeItem> AllPurposes { get; set; }
 
         // Maybe not required
         public static IEnumerable<string> ContactTypes { get; private set; }
@@ -39,6 +42,8 @@ namespace NGOStatuteGenerator
             PopularVotesOptions = ReadJson<string[]>(GetEnumResourceFileName("popularVoteOptions"));
             ExecutiveTieBreakerOptions = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
             GeneralMeetingRepresentedByOptions = ReadJson<string[]>(GetEnumResourceFileName("contactTypes"));
+
+            AllPurposes = ReadJson<PurposeItem[]>(Path.Combine("resources", "purposeItems.json"));
 
             var genInfo = new Models.GeneralInformation
             {
