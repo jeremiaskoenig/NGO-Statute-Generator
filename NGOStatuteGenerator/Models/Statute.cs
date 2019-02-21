@@ -33,7 +33,7 @@ namespace NGOStatuteGenerator.Models
             foreach (var supplier in suppliers)
             {
                 result = supplier.GetPlaceholderValue(placeholder);
-                if (result != "")
+                if (!string.IsNullOrEmpty(result) && !string.IsNullOrWhiteSpace(result))
                 {
                     return result;
                 }

@@ -18,7 +18,7 @@ namespace NGOStatuteGenerator.Controllers
             for (int i = 1; i <= 12; i++)
             {
                 var paragraphInfo = Program.ReadJson<TextGeneration.Data.Paragraph>(Program.GetParagraphResourceFileName(i));
-                doc.Paragraphs.Add(paragraphInfo.BuildDocumentParagraph(model.GeneralInformation));
+                doc.Paragraphs.Add(paragraphInfo.BuildDocumentParagraph(model));
             }
             
             System.IO.File.WriteAllText("D:\\test.rtf", doc.Build(), System.Text.Encoding.ASCII);

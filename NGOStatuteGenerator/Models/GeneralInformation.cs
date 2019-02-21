@@ -24,9 +24,9 @@ namespace NGOStatuteGenerator.Models
                 case "$ClubName$":
                     return ClubName;
                 case "$ClubLocation$":
-                    return $"{City} {PostCode.ToString()}";
+                    return $"{City}, {PostCode.ToString()}";
                 default:
-                    return placeholder;
+                    return "";
             }
         }
     }

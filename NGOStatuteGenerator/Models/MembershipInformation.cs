@@ -23,6 +23,8 @@ namespace NGOStatuteGenerator.Models
         public string PopularVoteOption { get; set; }
         public MembershipInformation()
         {
+
+            MembershipPersonTypes = new List<string>();
             MembershipFee = new MembershipFee();
         }
 
@@ -30,8 +32,18 @@ namespace NGOStatuteGenerator.Models
         {
             switch (placeholder)
             {
+                case "$MembershipFees$":
+                    if (MembershipFee.Amount == 0)
+                    {
+                        return "keine Mitgliedbeiträge";
+                    }
+                    return $"";
                 case "$MemberTypes$":
-                    return $"{String.Join(", ", MembershipPersonTypes.GetRange(0, MembershipPersonTypes.Count - 2))} und {MembershipPersonTypes[MembershipPersonTypes.Count - 1]}";
+                    if (MembershipPersonTypes.Count > 0)
+                    {
+                        return $"{String.Join(", ", MembershipPersonTypes.GetRange(0, MembershipPersonTypes.Count - 2))} und {MembershipPersonTypes[MembershipPersonTypes.Count - 1]}";
+                    }
+                    return "";
                 case "$PopularVoteOption$":
                     return PopularVoteOption;
                 case "$CanDecide$":
