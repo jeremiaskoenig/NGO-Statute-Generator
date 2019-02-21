@@ -1,0 +1,51 @@
+[
+    {
+        "purpose": "die Förderung von Wissenschaft und Forschung",
+        "laymanTranslations": [
+            "Grundlagenforschung",
+            "generelle Forschung",
+            "Vorträge auf universitärem Niveau",
+            "Wissenschaftliche Tagungen und Kongresse",
+            "Unterhalten eines wissenschaftlichen Archivs oder Sammlung",
+            "Herausgabe von wisschenscahftlichen Büchern",
+            "Gutachten (müssen aber zu neuen Sachverhalten sein)"
+        ],
+        "keywords": [
+            "Forschung",
+            "Akademie",
+            "Institut",
+            "Lehre",
+            "Universität",
+            "Tagung",
+            "Bücher",
+            "Gutachten",
+            "Schule",
+            "Training"
+        ]
+    },
+    {
+        "purpose": "die Förderung der Jugend- und Altenhilfe",
+        "laymanTranslations": [
+            "Betreiben eines Kindergarten",
+            "Betreiben einer Jugendherberge",
+            "Betreiben eines Lehrlingsheimes",
+            "Betreiben eines Jugendheimes",
+            "Jugendarbeit",
+            "Jugendsozialarbeit",
+            "den erzieherischen  Jugendschutz",
+            "Familienförderung",
+            "Förderung von Jugendlichen im Allgemeinen",
+            "Tätigkeiten die alten Menschen die Möglichkeit erhalten",
+            "am Leben in der Gemeinschaft teilzunehmen"
+        ],
+        "keywords": [
+            "Kinder",
+            "Jugendliche",
+            "Junge",
+            "Mädchen",
+            "Minderjährig",
+            "Teenager",
+            "junge Menschen"
+        ]
+    }
+]
