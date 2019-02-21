@@ -66,7 +66,7 @@ namespace NGOStatuteGenerator
 
         private static string GetParagraphResourceFileName(int paragraph)
         {
-            return Path.Combine("resources", "enums", $"paragraph{paragraph}.json");
+            return Path.Combine("resources", "paragraphs", $"paragraph{paragraph}.json");
         }
         private static T ReadJson<T>(string path)
         {
