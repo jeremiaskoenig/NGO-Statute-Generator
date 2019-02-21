@@ -13,31 +13,34 @@ namespace NGOStatuteGenerator.Controllers
             if (handler == "findPurpose")
             {
                 model.PurposeInformation.FindPurpose();
-                Response.Redirect(Request.Path);
             }
             else if (handler == "finalSubmit")
             {
-                //TODO: Render RTF and send as File to Download
-                Response.Redirect(Request.Path);
-                return File(new byte[] { }, "application/rtf");
+                var doc = new TextGeneration.Document
+                {
+                    FontName = "Verdana",
+                    FontSize = 22
+                };
+
+                for (int i = 1; i <= 12; i++)
+                {
+                    var paragraphInfo = Program.ReadJson<TextGeneration.Data.Paragraph>(Program.GetParagraphResourceFileName(i));
+                    doc.Paragraphs.Add(paragraphInfo.BuildDocumentParagraph(model));
+                }
+
+                byte[] result;
+
+                using (var stream = new System.IO.MemoryStream())
+                using (var writer = new System.IO.StreamWriter(stream))
+                {
+                    writer.Write(doc.Build(model));
+                    result = stream.ToArray();
+                }
+
+                return File(result, "application/rtf", "satzung.rtf", false);
             }
 
             
-
-            model.PurposeInformation.FindPurpose();
-            var doc = new TextGeneration.Document
-            {
-                FontName = "Verdana",
-                FontSize = 22
-            };
-
-            for (int i = 1; i <= 12; i++)
-            {
-                var paragraphInfo = Program.ReadJson<TextGeneration.Data.Paragraph>(Program.GetParagraphResourceFileName(i));
-                doc.Paragraphs.Add(paragraphInfo.BuildDocumentParagraph(model));
-            }
-            
-            System.IO.File.WriteAllText("D:\\test.rtf", doc.Build(), System.Text.Encoding.ASCII);
             return View(model);
         }
 
