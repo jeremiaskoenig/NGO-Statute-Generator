@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
 using NGOStatuteGenerator.TextGeneration;
 using System;
 using System.Collections.Generic;
@@ -9,19 +10,13 @@ namespace NGOStatuteGenerator.Models
 {
     public class PurposeInformation : PageModel, IPlaceholderSupplier
     {
-        public IEnumerable<PurposeItem> ApplicablePurposes { get; set; }
         public string PurposeFreeText { get; set; }
         public string PurposeType { get; set; }
 
-        public PurposeInformation()
+        public static IEnumerable<PurposeItem> FindPurpose(string purposeType, string freeText)
         {
-            ApplicablePurposes = Program.AllPurposes;
-        }
-
-        public void FindPurpose()
-        {
-            var words = PurposeFreeText?.Split(' ').Distinct().ToArray();
-            ApplicablePurposes = Program.AllPurposes.Where(x => x.PurposeType == PurposeType).Where(x => x.Keywords.Intersect(words).Any());
+            var words = freeText?.Split(' ').Distinct().ToArray();
+            return Program.AllPurposes.Where(x => x.PurposeType == purposeType).Where(x => x.Keywords.Intersect(words).Any());
         }
 
         public string GetPlaceholderValue(string placeholder)

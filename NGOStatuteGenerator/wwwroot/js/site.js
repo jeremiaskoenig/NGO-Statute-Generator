@@ -1,7 +1,49 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function updatePurposeLaymanTranslation() {
 
-// Write your JavaScript code.
+    for (var element of document.getElementsByClassName("descriptionDiv")) {
+        element.hidden = true;
+    }
+
+    var targetElement = document.getElementById("option_" + document.getElementById("purposeSelect").value);
+    if (targetElement) {
+        targetElement.hidden = false;
+    }
+}
+function fillPurposeDescription(purposes) {
+
+    var selectString = "";
+    var descriptionDivsString = "";
+    var index = 1;
+    for (var purpose of purposes) {
+        selectString += "<option value=" + (index) + ">" + purpose.purpose + "</option>"
+        descriptionDivsString += "<div class='descriptionDiv' id='option_" + (index++) + "' hidden>" + purpose.laymanTranslations.join(", ") + "</div>"
+    }
+    console.log(selectString);
+    
+    document.getElementById("purposeSelect").innerHTML = selectString;
+    document.getElementById("purposeDescription").innerHTML = descriptionDivsString;
+
+    updatePurposeLaymanTranslation();
+}
+
+
+function getCategoryDescription() {
+    var purposeType = document.getElementById("purposeType").value;
+    var purposeFreeText = document.getElementById("purposeFreeText").value;
+    console.log(purposeType, purposeFreeText);
+    $.ajax({
+        type: "POST",
+        url: "/Statute/PurposeDescription",
+        dataType: "json",
+        data: {
+            "purposeType": purposeType,
+            "purposeFreeText": purposeFreeText
+        },
+        success: function (result) { fillPurposeDescription(result) },
+        error: function () { console.log("test") }
+    });
+}
+
 function toggleFounderRows() {
     var founderCount = parseInt(document.getElementById("founderCount").value);
     for (var i = 1; i <= 10; i++) {

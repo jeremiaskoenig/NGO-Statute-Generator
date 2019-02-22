@@ -1,0 +1,44 @@
+﻿@model MeetingOptions
+@{
+}
+
+<div class="row">
+    <div class="col-xs-3">
+        Einberufung über
+    </div>
+    <div class="col-xs-9 col-sm-6">
+        <select value="" multiple>
+            @foreach (string option in Program.ContactTypes)
+            {
+                <option value="option">@option</option>
+            }
+        </select>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-3">
+        Einberufungsfrist
+    </div>
+
+    <div class="col-xs-9 col-sm-6">
+        <input type="number" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-3">
+        Tagesordnung muss einberufen werden
+    </div>
+
+    <div class="col-xs-3">
+        <button checked="true">Ja</button>
+    </div>
+
+    <div class="col-xs-3">
+        <button>Nein</button>
+    </div>
+</div>
+
+

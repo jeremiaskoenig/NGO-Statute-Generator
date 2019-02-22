@@ -19,14 +19,13 @@ namespace NGOStatuteGenerator.Models
         public List<string> MembershipPersonTypes { get; set; }
         public bool RequiresMembershipFee { get; set; }
         public MembershipFee MembershipFee { get; set; }
-        public int MembersRequiredForQuorum { get; set; }
-        public string PopularVote { get; set; }
         public bool CanBeRepresented { get; set; }
+        public MeetingOptions MeetingOptions { get; set; }
         public MembershipInformation()
         {
-
             MembershipPersonTypes = new List<string>();
             MembershipFee = new MembershipFee();
+            MeetingOptions = new MeetingOptions(MeetingTypes.Members);
         }
 
         public string GetPlaceholderValue(string placeholder)
@@ -46,7 +45,7 @@ namespace NGOStatuteGenerator.Models
                     }
                     return "";
                 case "$MembershipPopularVoteOption$":
-                    return PopularVote;
+                    return MeetingOptions.PopularVote;
                 case "$CanDecide$":
                     return "";
                 case "$CanBeRepresented$":

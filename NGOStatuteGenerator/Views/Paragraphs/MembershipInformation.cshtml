@@ -11,7 +11,7 @@
 {
     <div class="row">
         <div class="col-xs-offset-3 col-xs-1">
-            <input type="checkbox" class="personTypes_checkbox" value="@option"  />
+            <input type="checkbox" class="personTypes_checkbox" value="@option" />
         </div>
         <div class="col-xs-6">
             @option
@@ -82,4 +82,5 @@
     </div>
 </div>
 
+@await Html.PartialAsync("~/Views/Shared/MeetingOptions.cshtml", Model.MembershipInformation.MeetingOptions)
 

@@ -29,8 +29,12 @@
 </div>
 
 <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-4">
         <b>Vorstandsversammlung</b>
+    </div>
+    <div class="col-xs-5"></div>
+    <div class="col-xs-3">
+        <button>Weitere Einstellungen</button>
     </div>
 </div>
 
@@ -60,11 +64,4 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-xs-3">
-        Einberufungsfrist (Wochen):
-    </div>
-    <div class="col-xs-9 col-md-6">
-        <input type="number" />
-    </div>
-</div>
+@await Html.PartialAsync("~/Views/Shared/MeetingOptions.cshtml", Model.ExecutiveInformation.MeetingOptions)
