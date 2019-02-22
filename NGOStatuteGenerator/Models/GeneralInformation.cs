@@ -8,7 +8,7 @@ namespace NGOStatuteGenerator.Models
     public class GeneralInformation : PageModel, IPlaceholderSupplier
     {
         public string ClubName { get; set; }
-        public int PostCode { get; set; }
+        public string PostCode { get; set; }
         public string City { get; set; }
         public int FounderCount { get; set; }
         public List<string> FounderNames { get; set; }
@@ -27,7 +27,7 @@ namespace NGOStatuteGenerator.Models
                 case "$ClubName$":
                     return ClubName;
                 case "$ClubLocation$":
-                    return $"{City}, {PostCode.ToString()}";
+                    return $"{City}, {PostCode:00000}";
                 case "$FoundingDate$":
                     return FoundingDate.ToString("dd.MM.yyyy");
                 default:

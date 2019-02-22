@@ -7,7 +7,7 @@
         Einberufung über
     </div>
     <div class="col-xs-9 col-sm-6">
-        <select value="" multiple>
+        <select asp-for="SummoningContactTypes" multiple>
             @foreach (string option in Program.ContactTypes)
             {
                 <option value="option">@option</option>
@@ -23,7 +23,7 @@
     </div>
 
     <div class="col-xs-9 col-sm-6">
-        <input type="number" />
+        <input asp-for="SummoningPeriodInWeeks" type="number" />
     </div>
 </div>
 
@@ -39,6 +39,7 @@
     <div class="col-xs-3">
         <button>Nein</button>
     </div>
+    <input hidden asp-for="AgendaRequired" />
 </div>
 
 

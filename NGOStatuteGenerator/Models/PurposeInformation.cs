@@ -16,8 +16,15 @@ namespace NGOStatuteGenerator.Models
         public static IEnumerable<PurposeItem> FindPurpose(string purposeType, string freeText)
         {
             var words = freeText?.Split(' ').Distinct().ToArray();
-            return Program.AllPurposes.Where(x => x.PurposeType == purposeType).Where(x => x.Keywords.Intersect(words).Any());
+
+            return  Program.AllPurposes
+               .Where(purpose => purpose.PurposeType == purposeType)
+               .Where(x =>
+               {
+                   return x.Keywords.Any(keyword => freeText.Contains(keyword, StringComparison.CurrentCultureIgnoreCase));
+               });
         }
+
 
         public string GetPlaceholderValue(string placeholder)
         {
