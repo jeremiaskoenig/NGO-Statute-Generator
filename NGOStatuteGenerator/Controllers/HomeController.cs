@@ -8,8 +8,18 @@ namespace NGOStatuteGenerator.Controllers
     public class HomeController : Controller
     {
         [HttpPost]
-        public IActionResult Index(Statute model, string handler)
+        /// <remarks>
+        /// All models need to have "model" in their variable name
+        /// </remarks>
+        public IActionResult Index(Statute model, string handler, GeneralInformation generalModel)
         {
+            if (generalModel != null)
+            {
+                model.GeneralInformation = generalModel;
+            }
+
+
+
             if (handler == "findPurpose")
             {
                 model.PurposeInformation.FindPurpose();
