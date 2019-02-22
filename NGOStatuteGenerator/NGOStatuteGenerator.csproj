@@ -20,7 +20,7 @@
     <Content Update="Resources\Enums\feePeriodTypes.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="Resources\Paragraphs\paragraph1.json">
+    <Content Update="Resources\Paragraphs\paragraph01.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Update="Resources\Enums\personTypes.json">

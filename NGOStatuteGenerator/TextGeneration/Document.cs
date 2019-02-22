@@ -11,18 +11,19 @@ namespace NGOStatuteGenerator.TextGeneration
     public class Document
     {
         /// <summary>
-        /// Document title
-        /// </summary>
-        public string Title { get; set; }
-
-        /// <summary>
         /// Font name
         /// </summary>
         public string FontName { get; set; }
+        
         /// <summary>
         /// Font size in half points
         /// </summary>
         public int FontSize { get; set; }
+
+        /// <summary>
+        /// Font size in half points
+        /// </summary>
+        public int FontSizeHeader { get; set; }
 
         /// <summary>
         /// Paragraphs
@@ -34,16 +35,15 @@ namespace NGOStatuteGenerator.TextGeneration
             StringBuilder builder = new StringBuilder();
             int indent = 0;
 
-            builder.AppendLine(String.Format(RTF_HEADER, FontName, FontSize).Replace("[", "{").Replace("]", "}"));
-            builder.AppendLine(String.Format(TITLE_FORMAT, RtfEscape(BuildText(model, Title), out indent), indent));
+            builder.AppendLine(String.Format(RTF_HEADER, FontName).Replace("[", "{").Replace("]", "}"));
 
             foreach (var para in Paragraphs)
             {
-                builder.AppendLine(String.Format(HEADER_FORMAT, RtfEscape(BuildText(model, para.Header), out indent), indent));
+                builder.AppendLine(String.Format(HEADER_FORMAT, RtfEscape(BuildText(model, para.Header), out indent), indent, FontSizeHeader));
 
                 foreach (var line in para.Body)
                 {
-                    builder.AppendLine(String.Format(CLAUSE_FORMAT, RtfEscape(line, out indent), indent));
+                    builder.AppendLine(String.Format(CLAUSE_FORMAT, RtfEscape(line, out indent), indent, FontSize));
                 }
             }
 
@@ -102,10 +102,9 @@ namespace NGOStatuteGenerator.TextGeneration
             return result;
         }
 
-        private const string RTF_HEADER = @"[\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1031[\fonttbl[\f0\fnil\fcharset0 {0};]]\viewkind4\uc1\fs{1}";
-        private const string TITLE_FORMAT = @"\pard\li{1}\sa200\sl276\slmult1\f0\ul\b {0}\par\ulnone\b0";
-        private const string HEADER_FORMAT = @"\pard\li{1}\sa200\sl276\slmult1\f0\b {0}\par\b0";
-        private const string CLAUSE_FORMAT = @"\pard\li{1}\sa200\sl276\slmult1\qj\f0 {0}\par";
+        private const string RTF_HEADER = @"[\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1031[\fonttbl[\f0\fnil\fcharset0 {0};]]\viewkind4\uc1";
+        private const string HEADER_FORMAT = @"\pard\li{1}\sa200\sl276\slmult1\f0\fs{2}\b {0}\par\b0";
+        private const string CLAUSE_FORMAT = @"\pard\li{1}\sa200\sl276\slmult1\qj\f0\fs{2} {0}\par";
         private const string SIGNING_LINE = @"\pard\sa200\sl276\slmult1\qj\f0 ____________________________ ({0})   ________________ (Datum)\par";
     }
 }

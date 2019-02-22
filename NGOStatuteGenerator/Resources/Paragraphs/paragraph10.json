@@ -5,8 +5,8 @@
       "text": "(1) Die Mitgliederversammlung ist oberstes Organ des Vereins. In der Mitgliederversammlung hat jedes Mitglied eine Stimme. $CanBeRepresented$",
       "placeholders": {
         "$CanBeRepresented$": {
-          "true": "Die Mitglieder können sich bei Nichtanwesenheit durch ein anderes Mitglied vertreten lassen.",
-          "false":  ""
+          "True": "Die Mitglieder können sich bei Nichtanwesenheit durch ein anderes Mitglied vertreten lassen.",
+          "False":  ""
         }
       }
     },

@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using NGOStatuteGenerator.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace NGOStatuteGenerator
@@ -21,6 +23,7 @@ namespace NGOStatuteGenerator
         // Maybe not required
         public static IEnumerable<string> ContactTypes { get; private set; }
         public static IEnumerable<string> Executives { get; private set; }
+
         public static IEnumerable<string> ExecutiveTasks { get; private set; }
         public static IEnumerable<string> FeePeriodTypes { get; private set; }
         public static IEnumerable<string> PersonTypes { get; private set; }
@@ -45,6 +48,11 @@ namespace NGOStatuteGenerator
             AllPurposes = ReadJson<PurposeItem[]>(Path.Combine("resources", "purposeItems.json"));
 
             CreateWebHostBuilder(args).Build().Run();
+        }
+
+        public static IEnumerable<string> GetParagraphResources()
+        {
+            return Directory.GetFiles(Path.Combine("resources", "paragraphs"), "paragraph*.json").OrderBy(x => x);
         }
 
         private static string GetEnumResourceFileName(string enumName)

@@ -10,6 +10,7 @@ namespace NGOStatuteGenerator.TextGeneration.Data
     {
         [JsonProperty("title")]
         public string Title { get; set; }
+
         [JsonProperty("clauses")]
         public IEnumerable<Clause> Clauses { get; set; }
 

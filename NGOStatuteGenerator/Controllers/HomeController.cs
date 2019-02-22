@@ -19,24 +19,24 @@ namespace NGOStatuteGenerator.Controllers
                 var doc = new TextGeneration.Document
                 {
                     FontName = "Verdana",
-                    FontSize = 22
+                    FontSize = 22,
+                    FontSizeHeader = 24
                 };
-
-                for (int i = 1; i <= 12; i++)
+                
+                foreach (string paragraphFileName in Program.GetParagraphResources())
                 {
-                    var paragraphInfo = Program.ReadJson<TextGeneration.Data.Paragraph>(Program.GetParagraphResourceFileName(i));
+                    var paragraphInfo = Program.ReadJson<TextGeneration.Data.Paragraph>(paragraphFileName);
                     doc.Paragraphs.Add(paragraphInfo.BuildDocumentParagraph(model));
                 }
 
                 byte[] result;
 
-                string docText = doc.Build(model);
-                result = System.Text.Encoding.ASCII.GetBytes(docText);
+                result = System.Text.Encoding.ASCII.GetBytes(doc.Build(model));
 
-                return File(result, "application/rtf", "satzung.rtf", true);
+                return File(result, "application/rtf", $"Satzung - {model.GeneralInformation.ClubName}.rtf", true);
             }
 
-            
+
             return View(model);
         }
 
